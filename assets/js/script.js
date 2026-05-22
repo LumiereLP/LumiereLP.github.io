@@ -63,12 +63,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
             await typeToTerminal(text, 50);
 
+            await sleep(500);
+
+            if (opt.classList.contains('dialog-back')) {
+                restoreNavigation();
+                busy = false;
+                options.forEach(function (o) { o.style.pointerEvents = ''; });
+                return;
+            }
+
             if (nav) nav.classList.add('nav-collapsed');
             
             if (nav) nav.classList.add('fade-out');
 
             if (mainAbout) mainAbout.classList.add('slide-up');
-            await sleep(1000);
+
+            setTimeout(() => {
+                if (mainAbout) mainAbout.style.display = 'none';
+            }, 600);
 
             var panel = document.querySelector(targetSelector + '-panel') || document.querySelector(targetSelector);
             if (panel) {
@@ -78,16 +90,59 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             busy = false;
+            options.forEach(function (o) { o.style.pointerEvents = ''; });
         });
     });
 
-    // 对 nav 中的任意链接，也应用折叠行为（包括 mini-action 链接）
+    function restoreNavigation() {
+        var visiblePanel = document.querySelector('.panel.visible');
+        if (visiblePanel) {
+            visiblePanel.classList.remove('visible');
+            visiblePanel.setAttribute('aria-hidden', 'true');
+        }
+        if (mainAbout) {
+            mainAbout.classList.remove('slide-up');
+            mainAbout.style.display = '';
+        }
+        if (nav) {
+            nav.classList.remove('nav-collapsed');
+            nav.classList.remove('fade-out');
+            nav.classList.add('nav-visible');
+        }
+    }
+
+    
     if (nav) {
         var navLinks = nav.querySelectorAll('a');
         navLinks.forEach(function (lnk) {
             lnk.addEventListener('click', function () {
                 nav.classList.add('nav-collapsed');
             });
+        });
+    }
+
+    var songAction = document.querySelector('a[href="#song"]');
+    if (songAction) {
+        songAction.addEventListener('click', function (e) {
+            e.preventDefault(); // 阻止默认的锚点跳转
+            
+            fetch('songs.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('无法读取歌曲数据');
+                    return response.json();
+                })
+                .then(songs => {
+                    if (songs && songs.length > 0) {
+                        var randomIndex = Math.floor(Math.random() * songs.length);
+                        var randomSong = songs[randomIndex];
+                        
+                        window.location.href = './song/index.html?id=' + randomSong.id;
+                    }
+                })
+                .catch(err => {
+                    console.error('加载歌单失败:', err);
+                    alert('歌单电波传送失败，请稍后再试');
+                });
         });
     }
 });

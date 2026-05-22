@@ -32,8 +32,15 @@ body {
     background: transparent;
     overflow-x: hidden;
     color: #f5f7ff;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
 body.scrolled {
     background-color: #121212;
 }
@@ -45,17 +52,13 @@ body.scrolled {
 
 body.scrolled .content {
     margin-top: 0;
-}
-
-body.scrolled .content {
-    margin-top: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding: 0 1rem;
+    justify-content: flex-start; 
+    gap: 0rem;
+    padding-top: 15vh; 
 }
 
 body.scrolled nav {
@@ -69,11 +72,14 @@ body.scrolled nav {
 
 
 h1 {
+    margin: 0pt, 70pt, 0pt, 0pt;
     font-family: var(--font-sans);
-    font-size: 80pt;
-    font-weight: 20;
+    font-size: 150pt;
+    font-weight: 500;
+    text-align: left;
     color: #3a75ffa5;
     text-shadow: 10px 3px 0px rgba(42, 159, 255, 0.146);
+    line-height: 0.7;
     margin: 0;
     letter-spacing: -0.1em;
 }
@@ -82,24 +88,21 @@ p {
     margin: 0;
 }
 
-a {
-}
-
 header {
     width: 100%;
     max-width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 1rem;
+    justify-content: left;
+    padding: 0 0 0 2rem;
     box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 5;
-    background-image: url("../images/shade.png"), linear-gradient(to right, rgba(103, 174, 255, 0.92), rgba(101, 130, 255, 0.92));
+    background-image: url("../images/shade.png"), linear-gradient(to right, rgba(63, 107, 157, 0.92), rgba(69, 88, 174, 0.92));
     background-size: cover, cover;
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
@@ -115,7 +118,7 @@ header.header-hidden {
 
 nav {
     width: 100%;
-    padding: 1rem 1.5rem;
+    padding: 0rem 0rem;
     background: transparent;
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
     position: sticky;
@@ -168,8 +171,7 @@ nav ul,
     font-weight: 700;
     text-decoration: none;
     background-clip: padding-box;
-    /* 使用边框渐变（border-image） */
-    border-image: linear-gradient(90deg, rgba(127,219,255,1), rgba(255, 255, 255, 0)) 1;
+    border-image: linear-gradient(90deg, #7FDBFFFF, #FFFFFF00) 1;
     transition: box-shadow 0.25s ease, transform 0.12s ease;
 }
 
@@ -212,19 +214,33 @@ nav ul,
     text-decoration: underline;
 }
 
+.panel-actions {
+    padding-top: 1rem;
+    margin-top: 2rem;
+    clear: both;
+    display: flex;
+    justify-content: center;
+}
+
+.panel .dialogue {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 .terminal-line {
     width: 100%;
     display: flex;
     align-items: flex-end;
-    padding: 0px 0px 4em 4em;
+    padding: 0px 0px 3em 3em;
     gap: 0.6rem;
     margin-top: 0px;
     font-family: monospace;
     color: #ffffff;
     font-size: 18px;
+    font-family: var(--font-sans);
 }
 
-/* 统一主内容与终端宽度，保证左侧对齐 */
 .content > main,
 .content > .terminal-line {
     width: var(--content-column-width);
@@ -272,13 +288,14 @@ nav ul,
     }
 }
 
-/* 主体：固定高度并底部对齐，折叠时过渡到 height:0 释放布局空间 */
 .content > main {
     width: var(--content-column-width);
     height: var(--content-column-height);
-    display: flex;
+    min-height: 0;
+    display: strict;
     align-items: flex-end;
-    padding: 1.5rem;
+    padding: 0px;
+    margin-bottom: 2rem;
     box-sizing: border-box;
     overflow: hidden;
     transition: height 0.6s ease, padding 0.6s ease, opacity 0.4s ease;
@@ -286,12 +303,13 @@ nav ul,
 
 main#about.slide-up {
     height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
     opacity: 0;
+    border: none;
 }
 
-/* 导航淡出 */
 nav.fade-out {
     opacity: 0;
     transform: translateY(-12px);
@@ -299,8 +317,8 @@ nav.fade-out {
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
 }
 
-/* 面板默认隐藏 */
 .panel {
+    width: 100%;
     opacity: 0;
     transform: translateY(12px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -308,6 +326,7 @@ nav.fade-out {
     margin: 0 auto;
     padding: 1rem 1.5rem 4rem;
     display: none;
+    overflow: hidden;
 }
 
 .panel.visible {
@@ -325,13 +344,39 @@ nav.fade-out {
 main {
     padding: 0px 0px 0px 0px;
     max-width: 940px;
-    margin: 0 auto;
+    margin: 0;
     line-height: 1.75;
     color: #f5f7ff;
     font: 18pt "Bodoni Moda", "Noto Serif SC",  serif;
 }
+p {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
 
-footer {
+blockquote {
+    margin: 4pt;
+    padding: 5pt;
+    border-left: 4px solid #7FDBFF;
+    background-color: #6ab4ff57;
+    font-style: italic;
+}
+
+.right-image {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  max-width: 300px;
+  height: auto;
+  box-shadow: 10px 10px 0px 0px #7FDBFF;
+}
+
+.signature-image {
+    float: right;
+    display: block;
+    margin: 7px;
+    max-width: 200px;
+    height: auto;
 }
 
 /* Responsive Design */
