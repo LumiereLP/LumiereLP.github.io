@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在播放 - Extraterrestrialmemoirartifact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --font-sans: "Figtree", "Noto Sans SC", sans-serif;
+            --bg-color: #121212;
+            --text-color: #f5f7ff;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            min-height: 100vh;
+        }
+
+        /* 播放页容器：居中且限制最大宽度，完美适配手机 */
+        .song-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            box-sizing: border-box;
+        }
+
+        /* 返回按钮 */
+        .back-home {
+            display: inline-block;
+            color: #888888;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+        .back-home:hover {
+            color: #ffffff;
+        }
+
+        /* 歌曲信息区域 */
+        .song-meta {
+            margin-bottom: 2rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .song-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.5px;
+        }
+
+        .song-artist {
+            font-size: 16px;
+            color: #888888;
+            margin: 0;
+        }
+
+        /* 🌟 核心：视频响应式容器（限制最大宽度，防止手机上溢出） */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            /* Bilibili 标准 16:9 比例高宽比封装 */
+            padding-top: 56.25%; 
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* 强行约束嵌入代码中的 iframe 完美填满容器 */
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0 !important;
+        }
+
+        /* 错误提示样式 */
+        .error-message {
+            text-align: center;
+            margin-top: 20vh;
+            color: #ff4d4d;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="song-container">
+        <a href="../index.html" class="back-home">← 神秘地点</a>
+
+        <div id="player-content">
+            <div class="song-meta">
+                <h1 class="song-title" id="title">正在同步电波...</h1>
+                <p class="song-artist" id="artist">Loading...</p>
+            </div>
+            <div class="video-wrapper" id="video-container">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. 获取 URL 中的 id 参数 (例如 ?id=1)
+            const urlParams = new URLSearchParams(window.location.search);
+            let songId = urlParams.get('id');
+
+            // 如果你使用了干净的伪静态 URL（如 /song/1），可以通过以下方式解析：
+            // const pathSegments = window.location.pathname.split('/');
+            // let songId = pathSegments[pathSegments.length - 1] || urlParams.get('id');
+
+            if (!songId) {
+                showError('未找到对应的歌曲信号');
+                return;
+            }
+
+            // 2. 获取歌曲 JSON 数据
+            fetch('../songs.json')
+                .then(response => {
+                    if (!response.ok) throw new Error();
+                    return response.json();
+                })
+                .then(songs => {
+                    // 匹配对应的 ID (兼容字符串和数字对比)
+                    const song = songs.find(s => s.id == songId);
+
+                    if (song) {
+                        // 3. 渲染歌曲标题、艺术家
+                        document.getElementById('title').textContent = song.title;
+                        document.getElementById('artist').textContent = song.artist;
+                        document.title = song.title + " - " + song.artist + " | Player";
+
+                        // 4. 插入 Bilibili 嵌入代码
+                        const videoContainer = document.getElementById('video-container');
+                        videoContainer.innerHTML = song.embed;
+                    } else {
+                        showError('该神秘歌曲已从数据库中抹去 (ID: ' + songId + ')');
+                    }
+                })
+                .catch(() => {
+                    showError('无法加载核心数据库，请检查网络连接');
+                });
+
+            function showError(msg) {
+                document.getElementById('player-content').innerHTML = `
+                    <div class="error-message">
+                        <h2>Error</h2>
+                        <p>${msg}</p>
+                        <a href="../index.html" style="color: #f5f7ff; text-decoration: underline;">回到安全区</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
