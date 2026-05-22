@@ -4,20 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@8..96,200..900&family=Figtree:opsz,wght@8..96,100..900&family=Noto+Sans+SC:opsz,wght@8..96,100..900&family=Noto+Serif+SC:opsz,wght@8..96,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
+        <h1>Extraterrestrialmemoirartifact</h1>
     </header>
 
-    <nav>
-    </nav>
+    <div class="content">
+        <main id="about">
 
-    <main>
-    </main>
+            欢迎光临，这里是一个储藏室，或许也是一家百货铺——随你怎么想。也许你会在这里多少找到点对你来说的“惊喜”，也许你会觉得这里什么都没有。无论如何，欢迎你来看看。
+        </main>
+        <div class="terminal-line" aria-hidden="true">
+                <span class="prompt">&gt;</span>
+                <span class="typed" aria-hidden="true"></span>
+                <span class="cursor" role="img" aria-label="cursor"></span>
+            </div>
+        <nav>
+            <ul class="dialogue">
+                <li><a href="#about" data-target="#about-panel" class="dialog-option" style="--glow: #7FDBFF;">你是谁？</a></li>
+                <li><a href="#gallery" data-target="#gallery-panel" class="dialog-option" style="--glow: #FFD166;">这里都有些什么？</a></li>
+                <li><a href="#contact" data-target="#contact-panel" class="dialog-option" style="--glow: #B39DDB;">我该怎么找到你？</a></li>
+            </ul>
 
-    <footer>
-    </footer>
+            <div class="mini-actions">
+                <div class="or">或者，</div>
+                <div class="actions">
+                    <a href="#song" class="mini-action">听首歌吧</a>
+                    <a href="#book" class="mini-action">看本书吧</a>
+                </div>
+            </div>
+        </nav>
+        <section id="about-panel" class="panel" aria-hidden="true">
+            <main class="panel-inner">
+                <h2>关于</h2>
+                <p>这里展示一些收藏的占位内容，未来可替换为实际的图片或条目。</p>
+            </main>
+        </section>
+
+        <section id="gallery-panel" class="panel" aria-hidden="true">
+            <main class="panel-inner">
+                <h2>收藏</h2>
+                <p>这里展示一些收藏的占位内容，未来可替换为实际的图片或条目。</p>
+            </main>
+        </section>
+
+        <section id="contact-panel" class="panel" aria-hidden="true">
+            <main class="panel-inner">
+                <h2>联系</h2>
+                <p>联系方式或表单会出现在这里。</p>
+            </main>
+        </section>
+
+
+
+        <footer>
+        </footer>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
