@@ -86,7 +86,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (panel) {
                 panel.classList.add('visible');
                 panel.setAttribute('aria-hidden', 'false');
-                try { panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) {}
+                setTimeout(() => {
+                        var contentTop = document.querySelector('.content').offsetTop;
+                        window.scrollTo({
+                            top: contentTop + 100,
+                            behavior: 'smooth'
+                        });
+                    }, 50);
             }
 
             busy = false;
