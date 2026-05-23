@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>正在播放 - Extraterrestrialmemoirartifact</title>
+    <title>唱片机</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
@@ -24,7 +24,6 @@
             min-height: 100vh;
         }
 
-        /* 播放页容器：居中且限制最大宽度，完美适配手机 */
         .song-container {
             max-width: 800px;
             margin: 0 auto;
@@ -32,7 +31,6 @@
             box-sizing: border-box;
         }
 
-        /* 返回按钮 */
         .back-home {
             display: inline-block;
             color: #888888;
@@ -52,8 +50,8 @@
         }
 
         .song-title {
-            font-size: 28px;
-            font-weight: 600;
+            font-size: 34px;
+            font-weight: 700;
             margin: 0 0 0.5rem 0;
             letter-spacing: -0.5px;
         }
@@ -64,20 +62,17 @@
             margin: 0;
         }
 
-        /* 🌟 核心：视频响应式容器（限制最大宽度，防止手机上溢出） */
         .video-wrapper {
             position: relative;
             width: 100%;
-            /* Bilibili 标准 16:9 比例高宽比封装 */
             padding-top: 56.25%; 
             background: #000;
-            border-radius: 8px;
+            border-radius: 0px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             animation: fadeInUp 0.8s ease-out;
         }
 
-        /* 强行约束嵌入代码中的 iframe 完美填满容器 */
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -87,11 +82,25 @@
             border: 0 !important;
         }
 
-        /* 错误提示样式 */
+        .song-specs {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            color: #666666;
+            margin-top: 0.8rem;
+        }
+
+        .spec-separator {
+            margin: 0 0.6rem;
+            color: #333333;
+        }
+
+        .song-specs span span {
+            color: #aaaaaa;
+        }
         .error-message {
             text-align: center;
             margin-top: 20vh;
-            color: #ff4d4d;
+            color: #4d6eff;
         }
 
         /* 动画效果 */
@@ -115,45 +124,51 @@
                 <h1 class="song-title" id="title">正在同步电波...</h1>
                 <p class="song-artist" id="artist">Loading...</p>
             </div>
-            <div class="video-wrapper" id="video-container">
+            <div class="song-specs">
+                <span class="spec-item">时长: <span id="length">--:--</span></span>
+                <span class="spec-separator"><br></span>
+                <span class="spec-item">bpm: <span id="bpm">--</span></span>
+                <span id="source-container" style="display: none;">
+                    <span class="spec-item"><br>来源: <span id="source"></span></span>
+                </span>
+            </div>
+            <div class="video-wrapper" id="video-container" style="margin-top: 2rem; margin-bottom: 2rem;">
                 </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 1. 获取 URL 中的 id 参数 (例如 ?id=1)
+
             const urlParams = new URLSearchParams(window.location.search);
             let songId = urlParams.get('id');
-
-            // 如果你使用了干净的伪静态 URL（如 /song/1），可以通过以下方式解析：
-            // const pathSegments = window.location.pathname.split('/');
-            // let songId = pathSegments[pathSegments.length - 1] || urlParams.get('id');
-
             if (!songId) {
                 showError('未找到对应的歌曲信号');
                 return;
             }
-
-            // 2. 获取歌曲 JSON 数据
             fetch('../songs.json')
                 .then(response => {
                     if (!response.ok) throw new Error();
                     return response.json();
                 })
                 .then(songs => {
-                    // 匹配对应的 ID (兼容字符串和数字对比)
                     const song = songs.find(s => s.id == songId);
 
                     if (song) {
-                        // 3. 渲染歌曲标题、艺术家
                         document.getElementById('title').textContent = song.title;
                         document.getElementById('artist').textContent = song.artist;
+                        document.getElementById('length').textContent = song.length || '--:--';
+                        document.getElementById('bpm').textContent = song.bpm || '--';
                         document.title = song.title + " - " + song.artist + " | Player";
-
-                        // 4. 插入 Bilibili 嵌入代码
                         const videoContainer = document.getElementById('video-container');
                         videoContainer.innerHTML = song.embed;
+                        const sourceContainer = document.getElementById('source-container');
+                        if (song.source && song.source.strip !== "") {
+                            document.getElementById('source').textContent = song.source;
+                            sourceContainer.style.display = 'inline'; // 有数据则显示出来
+                        } else {
+                            sourceContainer.style.display = 'none';  // 无数据则隐形
+                        }
                     } else {
                         showError('该神秘歌曲已从数据库中抹去 (ID: ' + songId + ')');
                     }
