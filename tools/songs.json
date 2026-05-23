@@ -33,7 +33,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115957489994029&bvid=BV12vz4BDE3b&cid=35613575949&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "179",
     "length": "7:27",
-    "source": "osu!mania 7K World Cup 2026 Quaterfinals Tiebreaker"
+    "source": "osumania 7K World Cup 2026 Quaterfinals Tiebreaker"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=114847794593971&bvid=BV17TuYzFEJK&cid=31023368962&p=2\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "140 - 215",
     "length": "5:48",
-    "source": "osu!catch World Cup 2025 Grand Finals Tiebreaker"
+    "source": "osucatch World Cup 2025 Grand Finals Tiebreaker"
   },
   {
     "id": 6,
@@ -60,7 +60,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115640283171616&bvid=BV1KHSzBLEt8&cid=34402535919&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "180",
     "length": "3:25",
-    "source": "osu! World Cup 2025 Finals HR3"
+    "source": "osu World Cup 2025 Finals HR3"
   },
   {
     "id": 8,
@@ -105,7 +105,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115997017113674&bvid=BV1KD68BwEi3&cid=35815557822&p=2\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "184",
     "length": "2:28",
-    "source": "osu!mania 7K World Cup 2026 Semifinals RC1"
+    "source": "osumania 7K World Cup 2026 Semifinals RC1"
   },
   {
     "id": 13,
@@ -321,7 +321,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115680129059304&bvid=BV1YmmPBXEWB&cid=34578959289&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "135-270",
     "length": "7:49",
-    "source": "osu! World Cup 2025 Grandfinals Tiebreaker"
+    "source": "osu World Cup 2025 Grandfinals Tiebreaker"
   },
   {
     "id": 37,
@@ -330,7 +330,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115603188749869&bvid=BV1K2U3BhEs5&cid=34224538805&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "154",
     "length": "3:01",
-    "source": "osu! World Cup 2025 Semifinals HD2"
+    "source": "osu World Cup 2025 Semifinals HD2"
   },
   {
     "id": 38,
@@ -339,7 +339,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116313334812620&bvid=BV1u2X9BKE2e&cid=38523961939&p=2\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "178",
     "length": "3:18",
-    "source": "osu!taiko World Cup 2026 Quarterfinals NM6"
+    "source": "osutaiko World Cup 2026 Quarterfinals NM6"
   },
   {
     "id": 39,
@@ -411,7 +411,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1302328616&bvid=BV1Ku4m1M7F3&cid=1485721385&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "227",
     "length": "2;27",
-    "source": "osu!mania 7K World Cup 2024 Finals RC3"
+    "source": "osumania 7K World Cup 2024 Finals RC3"
   },
   {
     "id": 47,
@@ -514,9 +514,9 @@
   },
   {
     "id": 58,
-    "title": "!",
+    "title": "",
     "artist": "x髥莏",
-    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=745502314&bvid=BV1br4y197Z7&cid=1254974916&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "embed": "<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=63789384&bvid=BV1u4411U7We&cid=110749900&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>",
     "bpm": "135",
     "length": "2:23",
     "source": "nan"
