@@ -158,8 +158,11 @@
                         document.getElementById('title').textContent = song.title;
                         document.getElementById('artist').textContent = song.artist;
                         document.getElementById('length').textContent = song.length || '--:--';
-                        document.getElementById('bpm').textContent = song.bpm || '--';
-                        document.title = song.title + " - " + song.artist + " | Player";
+                        if (song.bpm && song.bpm !== '0' && song.bpm !== 0) {
+                            document.getElementById('bpm').textContent = song.bpm;
+                        } else {
+                            document.getElementById('bpm').textContent = '--';
+                        }
                         const videoContainer = document.getElementById('video-container');
                         videoContainer.innerHTML = song.embed;
                         const sourceContainer = document.getElementById('source-container');
