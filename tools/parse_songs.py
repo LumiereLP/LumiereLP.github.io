@@ -47,14 +47,11 @@ def convert_excel_to_json():
             if length == 'nan' or not length:
                 length = '--:--'
                 
-            raw_bpm = row.get('bpm', 0)
-            try:
-                if pd.isna(raw_bpm) or str(raw_bpm).strip() == 'nan':
-                    bpm = 0
-                else:
-                    bpm = int(float(raw_bpm))
-            except (ValueError, TypeError):
-                bpm = 0
+            bpm = str(row.get('bpm', '--')).strip()
+            if bpm.endswith('.0'):
+                bpm = bpm[:-2]
+            if bpm == 'nan' or not bpm:
+                bpm = '--'
                 
             source = str(row.get('source', '')).strip()
             if source == 'NaN':
