@@ -22,7 +22,7 @@
     "title": "Counting Breaths feat. eili",
     "artist": "Gardens",
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116245051475564&bvid=BV1i8wRzMEDc&cid=36771857680&p=2\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
-    "bpm": "170 - 230",
+    "bpm": "170 - 230(222)",
     "length": "5:35",
     "source": "osu!mania 7K Chinese National Cup 2026"
   },
@@ -33,14 +33,14 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115957489994029&bvid=BV12vz4BDE3b&cid=35613575949&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "179",
     "length": "7:27",
-    "source": "osu!ma+G4nia 7K World Cup 2026 Quaterfinals Tiebreaker"
+    "source": "osu!mania 7K World Cup 2026 Quaterfinals Tiebreaker"
   },
   {
     "id": 5,
     "title": "Eternity",
     "artist": "Yooh",
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=114847794593971&bvid=BV17TuYzFEJK&cid=31023368962&p=2\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
-    "bpm": "140 - 215",
+    "bpm": "140 - 215(200)",
     "length": "5:48",
     "source": "osu!catch World Cup 2025 Grand Finals Tiebreaker"
   },
@@ -49,7 +49,7 @@
     "title": "Echoes of Memoria",
     "artist": "Ludicin",
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1506009023&bvid=BV1nS421o7dY&cid=1615518063&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
-    "bpm": "190 - 230",
+    "bpm": "190 - 230(190)",
     "length": "6:09",
     "source": "The Perennial 2024 Grandfinals Tiebreaker"
   },
@@ -319,7 +319,7 @@
     "title": "黝堊の祈り - Anima immortalis est.（黝垩的祈祷）",
     "artist": "Imperial Circus Dead Decadence",
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115680129059304&bvid=BV1YmmPBXEWB&cid=34578959289&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
-    "bpm": "135-270",
+    "bpm": "135 - 270(270)",
     "length": "7:49",
     "source": "osu! World Cup 2025 Grandfinals Tiebreaker"
   },
@@ -420,7 +420,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=787028248&bvid=BV1g14y1q738&cid=1226641332&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "243",
     "length": "3:12",
-    "source": "- 莱莎的炼金工房～常暗女王与秘密藏身处～ OP"
+    "source": "莱莎的炼金工房～常暗女王与秘密藏身处～ OP"
   },
   {
     "id": 48,
@@ -526,9 +526,9 @@
     "title": "九皋",
     "artist": "かたぎり",
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=609288984&bvid=BV1K84y1p75a&cid=1008129313&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
-    "bpm": "162-216",
+    "bpm": "162 - 216(216)",
     "length": "5:35",
-    "source": "osu!mania 7K World Cup 2023 Grand Finals Tiebreaker"
+    "source": "osu!mania 7K World Cup 2023 Grandfinals Tiebreaker"
   },
   {
     "id": 60,
@@ -562,7 +562,7 @@
     "title": "アブジェ（Abject/凄惨）",
     "artist": "全てあなたの所為です。",
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=37111767&bvid=BV1jt411X7rn&cid=65252903&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
-    "bpm": "~90",
+    "bpm": "~ 90",
     "length": "3:51",
     "source": ""
   },
@@ -571,7 +571,7 @@
     "title": "K²（形而上）",
     "artist": "全てあなたの所為です。",
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=559980508&bvid=BV12e4y1a7bJ&cid=887515619&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
-    "bpm": "170-185（180）",
+    "bpm": "170 - 185（180）",
     "length": "4:33",
     "source": ""
   },
@@ -627,6 +627,276 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116391382359323&bvid=BV14QDDB7E4G&cid=37923064402&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "138",
     "length": "4:09",
+    "source": ""
+  },
+  {
+    "id": 71,
+    "title": "A Lovely Night",
+    "artist": "Emma Stone, Ryan Gosling",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=31081838&bvid=BV1VW411Z7AA&cid=54266274&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "Free Tempo",
+    "length": "4:00",
+    "source": "电影《爱乐之城》"
+  },
+  {
+    "id": 72,
+    "title": "Someone In The Crowd",
+    "artist": "Emma Stone,Callie Hernandez,Sonoya Mizuno,Jessica Rothe",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=24052682&bvid=BV13p411d7Ta&cid=40283438&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "56 - 155(128)",
+    "length": "4:14",
+    "source": "电影《爱乐之城》"
+  },
+  {
+    "id": 73,
+    "title": "Satisfied",
+    "artist": "Renée Elise Goldsberry, Original Broadway Cast of Hamilton",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=669846834&bvid=BV1Ra4y157VA&cid=241581705&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "124",
+    "length": "5:28",
+    "source": "音乐剧《汉密尔顿》"
+  },
+  {
+    "id": 74,
+    "title": "The Phantom of The Opera",
+    "artist": "Andrew Lloyd Webber,Michael Crawford,Sarah Brightman",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=518479649&bvid=BV19g411H7v5&cid=912862307&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "120",
+    "length": "5:20",
+    "source": "音乐剧《歌剧魅影》"
+  },
+  {
+    "id": 75,
+    "title": "Canto IX Boss 10 Battle Theme（无我良秀 战斗背景音乐）",
+    "artist": "StudioEIM",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115901269547529&bvid=BV1n3kPBSEXP&cid=35411266193&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "95",
+    "length": "3:05",
+    "source": "Limbus Company"
+  },
+  {
+    "id": 76,
+    "title": "再生",
+    "artist": "Perfume",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=79087534&bvid=BV1hJ411C7sV&cid=135349516&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "150",
+    "length": "4:43",
+    "source": "电影《尸人庄杀人事件》主题曲"
+  },
+  {
+    "id": 77,
+    "title": "多分、風。（也许，是风吧。）",
+    "artist": "サカナクション（鱼韵乐队）",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=376269261&bvid=BV16o4y1k7gh&cid=359430720&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "139",
+    "length": "4:52",
+    "source": ""
+  },
+  {
+    "id": 78,
+    "title": "WRLDS",
+    "artist": "Sta",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=90663007&bvid=BV1Q7411w7im&cid=154830511&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "134",
+    "length": "4:10",
+    "source": ""
+  },
+  {
+    "id": 79,
+    "title": "The Scattering Stars",
+    "artist": "Kyle Nagai & Sta",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=68150812&bvid=BV1vJ411w7b6&cid=118125451&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "130",
+    "length": "3:56",
+    "source": ""
+  },
+  {
+    "id": 80,
+    "title": "蒼天 (Sta's Key-Kai mix)",
+    "artist": "Meine Meinung",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1954761021&bvid=BV13y411e7Qm&cid=1557335015&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "182",
+    "length": "2:08",
+    "source": ""
+  },
+  {
+    "id": 81,
+    "title": "スーパーシンメトリー (feat. b)（Supersymmertry/超对称性）",
+    "artist": "Sta",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116175409251991&bvid=BV1ocPrzqEMj&cid=36468951292&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "210",
+    "length": "4:49",
+    "source": ""
+  },
+  {
+    "id": 82,
+    "title": "Aboigenesis（无生源论）",
+    "artist": "Juggernaut.",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1153432280&bvid=BV1xZ421e7Ei&cid=1515188328&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "190",
+    "length": "4:41",
+    "source": ""
+  },
+  {
+    "id": 83,
+    "title": "Antler（鹿角）",
+    "artist": "Juggernaut.",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=272216466&bvid=BV1Mc411g7B6&cid=1159935540&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "180",
+    "length": "3:37",
+    "source": ""
+  },
+  {
+    "id": 84,
+    "title": "Unterhimmel（青空之下）",
+    "artist": "Taishi",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1353371186&bvid=BV1Mz421k72U&cid=1510292172&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "37 - 160(160)",
+    "length": "12:41",
+    "source": ""
+  },
+  {
+    "id": 85,
+    "title": "The Wonderful Abstractions of a Lost Memory",
+    "artist": "ak+q",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=113549808501214&bvid=BV1VizVYPEvV&cid=27044940705&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "Variable",
+    "length": "12:06",
+    "source": ""
+  },
+  {
+    "id": 86,
+    "title": "水蓮",
+    "artist": "削除",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116420541154861&bvid=BV1WddLBxEPC&cid=37588174605&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "Free Tempo",
+    "length": "9:02",
+    "source": ""
+  },
+  {
+    "id": 87,
+    "title": "Offshore",
+    "artist": "Nhato / IA",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=5043343&bvid=BV1As411v7pb&cid=8192284&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "132",
+    "length": "7:01",
+    "source": ""
+  },
+  {
+    "id": 88,
+    "title": "NIGHTWAVE FRAGMENTS",
+    "artist": "DJ Noriken",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=440620214&bvid=BV1oL41117yi&cid=1040814900&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "190",
+    "length": "4:20",
+    "source": ""
+  },
+  {
+    "id": 89,
+    "title": "鳴石碑（Eura）",
+    "artist": "Feryquitous",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=18072716&bvid=BV1RW411B732&cid=29506341&p=8\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "90",
+    "length": "4:18",
+    "source": ""
+  },
+  {
+    "id": 90,
+    "title": "蘭",
+    "artist": "Feryquitous",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=5300302&bvid=BV1xs411y7Zk&cid=8615161&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "180",
+    "length": "4:03",
+    "source": ""
+  },
+  {
+    "id": 91,
+    "title": "I.回廊 (feat. mami)",
+    "artist": "Feryquitous",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1454052639&bvid=BV14i421y7e4&cid=1531655794&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "200",
+    "length": "4:17",
+    "source": ""
+  },
+  {
+    "id": 92,
+    "title": "III.追想",
+    "artist": "Feryquitous",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=777190593&bvid=BV1x14y1G7XM&cid=947673752&p=19\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "150",
+    "length": "3:48",
+    "source": ""
+  },
+  {
+    "id": 93,
+    "title": "The Unawaited",
+    "artist": "Sobrem",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=82896984&bvid=BV1CJ411H7tN&cid=141819627&p=12\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "~ 180",
+    "length": "4:29",
+    "source": ""
+  },
+  {
+    "id": 94,
+    "title": "25時76分発<<領域外>>行最終列車",
+    "artist": "cosMo@暴走P",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=82896984&bvid=BV1CJ411H7tN&cid=141817329&p=7\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "176",
+    "length": "3:56",
+    "source": ""
+  },
+  {
+    "id": 95,
+    "title": "Ωκεανος（Oceanus）",
+    "artist": "cosMo@暴走P",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1454565495&bvid=BV1ji421X7nb&cid=1549091827&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "192",
+    "length": "4:11",
+    "source": ""
+  },
+  {
+    "id": 96,
+    "title": "Celestial Exploring",
+    "artist": "a_hisa",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=654373464&bvid=BV1ca4y1M7vt&cid=1077929963&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "170",
+    "length": "4:24",
+    "source": ""
+  },
+  {
+    "id": 97,
+    "title": "S.O.S.",
+    "artist": "ABBA",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=847603428&bvid=BV1oL4y1a7WB&cid=396616281&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "116",
+    "length": "3:23",
+    "source": ""
+  },
+  {
+    "id": 98,
+    "title": "Parousia (Blacklolita Remix)",
+    "artist": "xi/Blacklolita",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1004258034&bvid=BV13x4y1B798&cid=1541934200&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "58 - 160(150)",
+    "length": "4:02",
+    "source": ""
+  },
+  {
+    "id": 99,
+    "title": "星になって (feat. Sennzai)",
+    "artist": "ARForest",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=691856482&bvid=BV1t24y1m7L6&cid=937873042&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "128",
+    "length": "3:30",
+    "source": ""
+  },
+  {
+    "id": 100,
+    "title": "一番街コスモナウト (feat. そらこ)",
+    "artist": "sasakure.UK",
+    "embed": "",
+    "bpm": "160",
+    "length": "4:04",
     "source": ""
   }
 ]
