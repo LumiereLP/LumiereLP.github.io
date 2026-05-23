@@ -613,12 +613,12 @@
   },
   {
     "id": 69,
-    "title": "Gene Kelly（吉恩·凯利）",
-    "artist": "Singin' In The Rain",
+    "title": "Singin' In The Rain",
+    "artist": "Gene Kelly（吉恩·凯利）",
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=426248631&bvid=BV1i3411P7qM&cid=710379839&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "137",
     "length": "4:17",
-    "source": "雨中曲"
+    "source": "电影《雨中曲》"
   },
   {
     "id": 70,
