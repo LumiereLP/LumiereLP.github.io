@@ -33,7 +33,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115957489994029&bvid=BV12vz4BDE3b&cid=35613575949&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "179",
     "length": "7:27",
-    "source": "osu!mania 7K World Cup 2026 Quaterfinals Tiebreaker"
+    "source": "osu!ma+G4nia 7K World Cup 2026 Quaterfinals Tiebreaker"
   },
   {
     "id": 5,
@@ -516,7 +516,7 @@
     "id": 58,
     "title": "!",
     "artist": "x髥莏",
-    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=745502314&bvid=BV1br4y197Z7&cid=1254974916&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=63789384&bvid=BV1u4411U7We&cid=110749900&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "135",
     "length": "2:23",
     "source": ""
@@ -546,6 +546,87 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=244458972&bvid=BV1xv41117oV&cid=231145397&p=3\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "128",
     "length": "5:04",
+    "source": ""
+  },
+  {
+    "id": 62,
+    "title": "名の無い星が空に堕ちたら（倘若无名之星堕入天空）",
+    "artist": "全てあなたの所為です。",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=69198778&bvid=BV1ZJ411T7aX&cid=119929361&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "100",
+    "length": "3:45",
+    "source": ""
+  },
+  {
+    "id": 63,
+    "title": "アブジェ（Abject/凄惨）",
+    "artist": "全てあなたの所為です。",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=37111767&bvid=BV1jt411X7rn&cid=65252903&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "~90",
+    "length": "3:51",
+    "source": ""
+  },
+  {
+    "id": 64,
+    "title": "K²（形而上）",
+    "artist": "全てあなたの所為です。",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=559980508&bvid=BV12e4y1a7bJ&cid=887515619&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "170-185（180）",
+    "length": "4:33",
+    "source": ""
+  },
+  {
+    "id": 65,
+    "title": "夢見",
+    "artist": "全て此の世の所為です。a.k.a 夏毛",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=840423192&bvid=BV1u54y1R7PL&cid=192006684&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "150",
+    "length": "5:28",
+    "source": ""
+  },
+  {
+    "id": 66,
+    "title": "倘若塵世猶然絢麗",
+    "artist": "猶狩",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=588877190&bvid=BV1FB4y1T7LU&cid=362146659&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "132",
+    "length": "4:26",
+    "source": ""
+  },
+  {
+    "id": 67,
+    "title": "星間飛行",
+    "artist": "ヒバナ（HIBANA）",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=619892510&bvid=BV1y84y1d7RW&cid=1307180388&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "167",
+    "length": "3:08",
+    "source": ""
+  },
+  {
+    "id": 68,
+    "title": "週末キネマ",
+    "artist": "BlackY（WAiKURO）/Risa Yuzuki（柚木梨莎）",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=425365125&bvid=BV1e3411H7Gg&cid=566064673&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "138",
+    "length": "3:48",
+    "source": ""
+  },
+  {
+    "id": 69,
+    "title": "Gene Kelly（吉恩·凯利）",
+    "artist": "Singin' In The Rain",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=426248631&bvid=BV1i3411P7qM&cid=710379839&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "137",
+    "length": "4:17",
+    "source": "雨中曲"
+  },
+  {
+    "id": 70,
+    "title": "飛燕草-long mix-",
+    "artist": "2TORI",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116391382359323&bvid=BV14QDDB7E4G&cid=37923064402&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "138",
+    "length": "4:09",
     "source": ""
   }
 ]
