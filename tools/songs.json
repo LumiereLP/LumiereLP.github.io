@@ -883,7 +883,7 @@
   },
   {
     "id": 99,
-    "title": "星になって (feat. Sennzai)",
+    "title": "星になって (feat. Sennzai)（化为繁星）",
     "artist": "ARForest",
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=691856482&bvid=BV1t24y1m7L6&cid=937873042&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "128",
@@ -892,11 +892,56 @@
   },
   {
     "id": 100,
-    "title": "一番街コスモナウト (feat. そらこ)",
+    "title": "一番街コスモナウト (feat. そらこ)（一号街的宇航员）",
     "artist": "sasakure.UK",
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=5645721&bvid=BV16s411C7Xr&cid=9175868&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "160",
     "length": "4:04",
+    "source": ""
+  },
+  {
+    "id": 101,
+    "title": "サマーライト feat.倚水（夏光）",
+    "artist": "夏央",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=220191670&bvid=BV1D841187re&cid=895090626&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "196",
+    "length": "4:36",
+    "source": ""
+  },
+  {
+    "id": 102,
+    "title": "blue comet（蓝色彗星）",
+    "artist": "ああああ",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=789155490&bvid=BV1eC4y1o723&cid=1288033704&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "172",
+    "length": "2:24",
+    "source": "音乐游戏《Arcaea》"
+  },
+  {
+    "id": 103,
+    "title": "後日譚",
+    "artist": "じん",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=419858443&bvid=BV1w341167xp&cid=389756240&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "208",
+    "length": "3:40",
+    "source": ""
+  },
+  {
+    "id": 104,
+    "title": "Walking by the Sea",
+    "artist": "Edmund Fu",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116633695684761&bvid=BV18BGx6xEGh&cid=38597169068&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "173",
+    "length": "4:36",
+    "source": "音乐游戏《Deemo》"
+  },
+  {
+    "id": 105,
+    "title": "ステンドノクターン ft.镜音铃, 初音未来（Stained Nocturne/涅染夜曲）",
+    "artist": "とあ",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=551213057&bvid=BV12q4y1F79h&cid=499607553&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "135",
+    "length": "3:39",
     "source": ""
   }
 ]
