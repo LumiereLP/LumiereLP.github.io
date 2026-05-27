@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     var header = document.querySelector('header');
     var nav = document.querySelector('nav');
-    // 分别配置隐藏与恢复阈值：
     var HIDE_THRESHOLD = 50; 
     var SHOW_THRESHOLD = -1; 
     var lastY = window.scrollY || 0;
-
+    var scrollTicking = false;
     function updateScrollState() {
         var currentY = window.scrollY || 0;
         var scrollingDown = currentY > lastY;
@@ -15,24 +14,28 @@ document.addEventListener('DOMContentLoaded', function () {
             nav.classList.remove('nav-visible');
             document.body.classList.add('scrolled');
         } else if (!scrollingDown) {
-            // 自动恢复仅在 SHOW_THRESHOLD >= 0 时启用
             if (SHOW_THRESHOLD >= 0 && currentY <= SHOW_THRESHOLD) {
                 header.classList.remove('header-hidden');
                 nav.classList.remove('nav-visible');
                 document.body.classList.remove('scrolled');
             } else if (currentY > HIDE_THRESHOLD) {
-                // 向上滚动但还未达到恢复阈值：显示 nav，header 仍隐藏
                 nav.classList.add('nav-visible');
                 document.body.classList.add('scrolled');
                 header.classList.add('header-hidden');
             }
         }
-
         lastY = currentY;
+        scrollTicking = false;
     }
 
+    window.addEventListener('scroll', function() {
+        if (!scrollTicking) {
+            requestAnimationFrame(updateScrollState);
+            scrollTicking = true;
+        }
+    }, { passive: true });
+
     updateScrollState();
-    window.addEventListener('scroll', updateScrollState, { passive: true });
 
     var options = document.querySelectorAll('.dialog-option');
     var typedSpan = document.querySelector('.terminal-line .typed');
@@ -62,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
             options.forEach(function (o) { o.style.pointerEvents = 'none'; });
 
             await typeToTerminal(text, 50);
-
             await sleep(500);
 
             if (opt.classList.contains('dialog-back')) {
@@ -73,9 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (nav) nav.classList.add('nav-collapsed');
-            
             if (nav) nav.classList.add('fade-out');
-
             if (mainAbout) mainAbout.classList.add('slide-up');
 
             setTimeout(() => {
@@ -87,12 +87,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 panel.classList.add('visible');
                 panel.setAttribute('aria-hidden', 'false');
                 setTimeout(() => {
-                        var contentTop = document.querySelector('.content').offsetTop;
-                        window.scrollTo({
-                            top: contentTop + 100,
-                            behavior: 'smooth'
-                        });
-                    }, 50);
+                    var contentEl = document.querySelector('.content');
+                    var contentTop = contentEl ? contentEl.offsetTop : 0;
+                    window.scrollTo({
+                        top: contentTop + 100,
+                        behavior: 'smooth'
+                    });
+                }, 50);
             }
 
             busy = false;
@@ -116,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
             nav.classList.add('nav-visible');
         }
     }
-
     
     if (nav) {
         var navLinks = nav.querySelectorAll('a');
@@ -130,8 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var songAction = document.querySelector('a[href="#song"]');
     if (songAction) {
         songAction.addEventListener('click', function (e) {
-            e.preventDefault(); // 阻止默认的锚点跳转
-            
+            e.preventDefault();
             fetch('songs.json')
                 .then(response => {
                     if (!response.ok) throw new Error('无法读取歌曲数据');
@@ -141,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (songs && songs.length > 0) {
                         var randomIndex = Math.floor(Math.random() * songs.length);
                         var randomSong = songs[randomIndex];
-                        
                         window.location.href = './song/index.html?id=' + randomSong.id;
                     }
                 })
@@ -152,19 +150,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+// --- 粒子特效部分优化 ---
 window.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('heroHeader');
     const canvas = document.getElementById('particleCanvas');
+    if (!header || !canvas) return;
     const ctx = canvas.getContext('2d');
 
-    // 让画布尺寸与 header 容器保持一致
     canvas.width = header.clientWidth;
     canvas.height = header.clientHeight;
 
     let particlesArray = [];
     let mouse = { x: undefined, y: undefined, radius: 150 };
+    let isElementVisible = true; // 视口可见性状态
+    let animationFrameId = null;
 
-    // 监听 header 的鼠标移动事件（计算相对 header 的坐标）
     header.addEventListener('mousemove', (e) => {
         const rect = header.getBoundingClientRect();
         mouse.x = e.clientX - rect.left;
@@ -176,32 +177,27 @@ window.addEventListener('DOMContentLoaded', () => {
         mouse.y = undefined;
     });
 
-    // 粒子类（带物理合力模型）
     class Particle {
         constructor(x, y) {
             this.x = x;
             this.y = y;
             this.baseX = x;
             this.baseY = y;
-            this.size = 1.5; // 粒子大小
+            this.size = 1.5;
             this.vx = 0;
             this.vy = 0;
-            this.springStrength = 0.1;   // 弹簧强度：数值越大，回弹越硬越快
-            this.repulsionStrength = 10;  // 排斥强度：数值越大，鼠标推得越远
-            this.friction = 0.55;         // 摩擦力/阻尼：0-1之间，越接近1减速越慢，防止粒子无限震荡
+            this.springStrength = 0.1;
+            this.repulsionStrength = 10;
+            this.friction = 0.55;
         }
-
         draw() {
-            // 这里用了半透明白色粒子，在你原本的蓝色渐变背景上效果会非常干净、高级
             ctx.fillStyle = 'rgba(135, 183, 255, 0.51)';
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.closePath();
             ctx.fill();
         }
-
         update() {
-            // 弹簧力
             let dxSpring = this.baseX - this.x;
             let dySpring = this.baseY - this.y;
             let fSpringX = dxSpring * this.springStrength;
@@ -210,7 +206,6 @@ window.addEventListener('DOMContentLoaded', () => {
             let fRepulsionX = 0;
             let fRepulsionY = 0;
 
-            // 排斥力
             if (mouse.x !== undefined && mouse.y !== undefined) {
                 let dxMouse = mouse.x - this.x;
                 let dyMouse = mouse.y - this.y;
@@ -218,7 +213,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                 if (distance < mouse.radius) {
                     let t = distance / mouse.radius;
-                    let forceFactor = Math.pow(1 - t, 2); // 距离越近力越大
+                    let forceFactor = Math.pow(1 - t, 2);
                     let dirX = -dxMouse / (distance || 1);
                     let dirY = -dyMouse / (distance || 1);
 
@@ -227,7 +222,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // 更新物理状态
             this.vx += fSpringX + fRepulsionX;
             this.vy += fSpringY + fRepulsionY;
             this.vx *= this.friction;
@@ -238,57 +232,362 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 加载图片并扫描线稿位置
     const image = new Image();
-    image.src = 'assets/images/cover.png'; // 自动读取你原本的图片路径
+    image.src = 'assets/images/cover.png';
 
     image.onload = function() {
+        initParticles();
+        startAnimation();
+    };
+
+    function initParticles() {
         const tempCanvas = document.createElement('canvas');
         const tempCtx = tempCanvas.getContext('2d');
         tempCanvas.width = canvas.width;
         tempCanvas.height = canvas.height;
 
-        // 将图片绘制到临时画布中（按 cover 逻辑铺满）
         tempCtx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
         const imgData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
         const pixels = imgData.data;
 
         particlesArray = [];
-        const step = 4; // 采样步长，如果觉得粒子太密/卡顿，可以调大这个值（如 5 或 6）
+        const step = 5; // 【优化】步长由 4 提升至 5，粒子数减少 36% 左右，性能大幅飙升且视觉影响极小
 
         for (let y = 0; y < tempCanvas.height; y += step) {
             for (let x = 0; x < tempCanvas.width; x += step) {
                 const index = (y * tempCanvas.width + x) * 4;
-                const r = pixels[index];
-                const g = pixels[index + 1];
-                const b = pixels[index + 2];
-                const brightness = (r + g + b) / 3;
-
-                // 核心识别：原图 shade 偏暗，线条最暗。
-                // 如果你已经换成了“黑底白线图”，请将此处改为 brightness > 128
+                const brightness = (pixels[index] + pixels[index + 1] + pixels[index + 2]) / 3;
                 if (brightness > 150) { 
                     particlesArray.push(new Particle(x, y));
                 }
             }
         }
-        animate();
-    };
+    }
 
     function animate() {
+        if (!isElementVisible) return; // 【优化 1】若移出视口，则停掉绘制
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         for (let i = 0; i < particlesArray.length; i++) {
             particlesArray[i].draw();
             particlesArray[i].update();
         }
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
     }
 
-    // 监听视口大小改变，重新计算
+    function startAnimation() {
+        if (!animationFrameId && isElementVisible) {
+            animationFrameId = requestAnimationFrame(animate);
+        }
+    }
+
+    function stopAnimation() {
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }
+    }
+
+    // 【优化 1】使用 IntersectionObserver 实现离开首屏停止粒子动画
+    if (window.IntersectionObserver) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isElementVisible = entry.isIntersecting;
+                if (isElementVisible) {
+                    startAnimation();
+                } else {
+                    stopAnimation();
+                }
+            });
+        }, { threshold: 0.05 });
+        observer.observe(header);
+    }
+
+    // 【优化 1】加入防抖（Debounce）的 Resize 监听，防止频繁重绘卡死
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        canvas.width = header.clientWidth;
-        canvas.height = header.clientHeight;
-        // 重新加载图片以触发重绘
-        image.src = '../images/shade.png?' + new Date().getTime();
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            canvas.width = header.clientWidth;
+            canvas.height = header.clientHeight;
+            initParticles();
+            if (isElementVisible) startAnimation();
+        }, 250); 
     });
+});
+
+// --- 联系人与 QQ 卡片逻辑优化 ---
+document.addEventListener('DOMContentLoaded', () => {
+    const contactRows = document.querySelectorAll('.contact-row');
+    const toast = document.getElementById('toast');
+    const qqCard = document.getElementById('qq-card');
+    const closeBtn = document.querySelector('.card-close-btn');
+
+    let pressTimer = null;
+    let lastMouseX = 0;
+    let lastMouseY = 0;
+
+    // 【优化 3】改为按需捕获坐标，不全天候监听全局 mousemove
+    function trackMouse(e) {
+        lastMouseX = e.clientX;
+        lastMouseY = e.clientY;
+    }
+
+    function showToast(text) {
+        toast.textContent = text;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    function handleCopy(value, label) {
+        navigator.clipboard.writeText(value).then(() => {
+            showToast(`已成功复制 ${label} 到剪贴板`);
+        }).catch(() => {
+            showToast('复制失败，请手动输入');
+        });
+    }
+
+    contactRows.forEach(row => {
+        const type = row.getAttribute('data-type');
+        const value = row.getAttribute('data-value');
+        const url = row.getAttribute('data-url');
+        const label = row.querySelector('.btn-trigger span').textContent;
+
+        row.addEventListener('click', (e) => {
+            if (type === 'qq') {
+                handleCopy(value, 'QQ号');
+                return;
+            }
+            if (type === 'link') {
+                window.open(url, '_blank');
+            } else if (type === 'copy') {
+                handleCopy(value, label);
+            }
+        });
+
+        if (type === 'qq') {
+            const startPress = (e) => {
+                if (e.button && e.button !== 0) return;
+                
+                // 【优化 3】在用户长按动作发生期间，才短暂允许记录坐标
+                if (e.clientX) {
+                    lastMouseX = e.clientX;
+                    lastMouseY = e.clientY;
+                    document.addEventListener('mousemove', trackMouse);
+                } else if (e.touches && e.touches[0]) {
+                    lastMouseX = e.touches[0].clientX;
+                    lastMouseY = e.touches[0].clientY;
+                }
+
+                pressTimer = setTimeout(() => {
+                    showQQCard();
+                    document.removeEventListener('mousemove', trackMouse);
+                }, 2000);
+            };
+
+            const cancelPress = () => {
+                if (pressTimer) {
+                    clearTimeout(pressTimer);
+                    pressTimer = null;
+                }
+                document.removeEventListener('mousemove', trackMouse);
+            };
+
+            row.addEventListener('mousedown', startPress);
+            row.addEventListener('mouseup', cancelPress);
+            row.addEventListener('mouseleave', cancelPress);
+
+            row.addEventListener('touchstart', startPress, { passive: true });
+            row.addEventListener('touchend', cancelPress);
+        }
+    });
+
+let isDragging = false;
+    let startX = 0, startY = 0;   
+    let cardX = 0, cardY = 0;     
+    let velX = 0, velY = 0;       
+    let lastX = 0, lastY = 0;     
+    let lastTime = 0;
+    let animationFrameId = null;
+
+    function showQQCard() {
+        cancelAnimationFrame(animationFrameId);
+        
+        // 强行斩断之前可能残留的过渡动画
+        qqCard.style.transition = 'none';
+        qqCard.style.opacity = '1';
+        qqCard.style.display = 'flex';
+        
+        // 动态捕获物理宽高
+        const cardWidth = qqCard.offsetWidth || 280;
+        const cardHeight = qqCard.offsetHeight || 350; 
+        
+        // 中心对齐指针
+        cardX = lastMouseX - (cardWidth / 2);
+        cardY = lastMouseY - (cardHeight / 2);
+        
+        const viewWidth = window.innerWidth;
+        const viewHeight = window.innerHeight;
+
+        // 安全边界，防越界卡死
+        if (cardX < 10) cardX = 10;
+        if (cardY < 10) cardY = 10;
+        if (cardX + cardWidth > viewWidth - 10) cardX = viewWidth - cardWidth - 10;
+        if (cardY + cardHeight > viewHeight - 10) cardY = viewHeight - cardHeight - 10;
+
+        qqCard.style.left = `${cardX}px`;
+        qqCard.style.top = `${cardY}px`;
+        qqCard.style.transformOrigin = 'center center';
+        qqCard.style.transform = 'scale(0.8) rotate(0deg)';
+        
+        // 弹性入场
+        requestAnimationFrame(() => {
+            qqCard.style.transition = 'transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s';
+            qqCard.style.transform = 'scale(1) rotate(0deg)';
+        });
+        
+        // 动画结束后解除 transition 束缚
+        setTimeout(() => {
+            if(!isDragging) qqCard.style.transition = 'none';
+        }, 250);
+    }
+
+    function closeQQCard() {
+        qqCard.style.transition = 'opacity 0.2s, transform 0.2s';
+        qqCard.style.opacity = '0';
+        qqCard.style.transform = 'scale(0.8)';
+        setTimeout(() => {
+            qqCard.style.display = 'none';
+        }, 200);
+    }
+
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeQQCard();
+    });
+
+    qqCard.addEventListener('click', (e) => {
+        if (!isDragging && Math.abs(velX) < 1 && Math.abs(velY) < 1) {
+            closeQQCard();
+        }
+    });
+
+    const onStart = (e) => {
+        if (e.target.classList.contains('card-close-btn')) return;
+        isDragging = true;
+        
+        cancelAnimationFrame(animationFrameId);
+        qqCard.style.transition = 'none';
+
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+        startX = clientX - cardX;
+        startY = clientY - cardY;
+        
+        lastX = cardX;
+        lastY = cardY;
+        lastTime = performance.now();
+        velX = 0;
+        velY = 0;
+    };
+
+    const onMove = (e) => {
+        if (!isDragging) return;
+        
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+        if (!clientX || !clientY) return;
+
+        cardX = clientX - startX;
+        cardY = clientY - startY;
+
+        const now = performance.now();
+        const dt = Math.max(now - lastTime, 1);
+        
+        velX = (cardX - lastX) / dt;
+        velY = (cardY - lastY) / dt;
+
+        lastX = cardX;
+        lastY = cardY;
+        lastTime = now;
+
+        const rotateDeg = Math.min(Math.max(velX * 15, -15), 15); 
+        qqCard.style.left = `${cardX}px`;
+        qqCard.style.top = `${cardY}px`;
+        qqCard.style.transform = `rotate(${rotateDeg}deg)`;
+    };
+
+    const onEnd = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        let throwVx = isNaN(velX) ? 0 : velX * 16;
+        let throwVy = isNaN(velY) ? 0 : velY * 16;
+        
+        startGravityFall(throwVx, throwVy);
+    };
+
+    function startGravityFall(initialVx, initialVy) {
+        cancelAnimationFrame(animationFrameId);
+        
+        qqCard.style.transition = 'none';
+
+        let currentX = parseFloat(qqCard.style.left);
+        if (isNaN(currentX)) currentX = cardX || 0;
+        
+        let currentY = parseFloat(qqCard.style.top);
+        if (isNaN(currentY)) currentY = cardY || 0;
+        
+        let vx = initialVx || 0;          
+        let vy = initialVy || 1;          
+        
+        const gravity = 0.4;         
+        const airResistance = 0.98;  
+        
+        let opacity = 1;
+        let rotation = 0;
+        let rotationSpeed = (vx * 0.2) + (Math.random() - 0.5) * 2; 
+
+        const cardWidth = qqCard.offsetWidth || 280;
+        const cardHeight = qqCard.offsetHeight || 350; 
+        const viewWidth = window.innerWidth;
+        const viewHeight = window.innerHeight; 
+
+        function updatePhysics() {
+            vy += gravity;           
+            vx *= airResistance;     
+            
+            currentX += vx;          
+            currentY += vy;
+            rotation += rotationSpeed; 
+
+            if (currentY > viewHeight - (cardHeight * 0.2)) {
+                opacity -= 0.04; 
+            }
+
+            qqCard.style.left = `${currentX}px`;
+            qqCard.style.top = `${currentY}px`;
+            qqCard.style.opacity = Math.max(opacity, 0);
+            qqCard.style.transform = `rotate(${rotation}deg)`;
+
+            if (currentY < viewHeight + 300 && opacity > 0) {
+                animationFrameId = requestAnimationFrame(updatePhysics);
+            } else {
+                qqCard.style.display = 'none';
+                qqCard.style.opacity = '1'; 
+                qqCard.style.transform = 'none';
+                cancelAnimationFrame(animationFrameId);
+            }
+        }
+
+        animationFrameId = requestAnimationFrame(updatePhysics);
+    }
+
+    qqCard.addEventListener('mousedown', onStart);
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onEnd);
+
+    qqCard.addEventListener('touchstart', onStart, { passive: true });
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', onEnd);
 });

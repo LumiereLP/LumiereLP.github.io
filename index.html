@@ -91,8 +91,44 @@
         <section id="contact-panel" class="panel" aria-hidden="true">
             <main class="panel-inner">
                 <h2>联系</h2>
-                <p>联系方式或表单会出现在这里。</p>
+                
+                <div class="contact-container">
+                    <div class="contact-row" data-type="copy" data-value="erirochester@gmail.com" style="--brand-color: #EA4335;">
+                        <div class="btn-trigger"><img src="assets/images/icons/gmail.svg" alt="Email" draggable="false"><span>邮箱</span></div>
+                        <div class="hidden-info">erirochester@gmail.com</div>
+                    </div>
+
+                    <div class="contact-row" data-type="qq" data-value="3048297106" style="--brand-color: #448AFF;">
+                        <div class="btn-trigger"><img src="assets/images/icons/qq.svg" alt="QQ" draggable="false"><span>QQ</span></div>
+                        <div class="hidden-info">3048297106</div>
+                    </div>
+
+                    <div class="contact-row" data-type="copy" data-value="lumi_lp" style="--brand-color: #7289DA;">
+                        <div class="btn-trigger"><img src="assets/images/icons/discord.svg" alt="Discord" draggable="false"><span>Discord</span></div>
+                        <div class="hidden-info">lumi_lp</div>
+                    </div>
+
+                    <div class="contact-row" data-type="link" data-url="https://x.com/Lumiere_Lopez" data-value="@Lumiere_Lopez" style="--brand-color: #1DA1F2;">
+                        <div class="btn-trigger"><img src="assets/images/icons/x.svg" alt="X" draggable="false"><span>X (Twitter)</span></div>
+                        <div class="hidden-info">@Lumiere_Lopez</div>
+                    </div>
+
+                    <div class="contact-row" data-type="link" data-url="https://osu.ppy.sh/users/36578734" data-value="[GB]LumiereLP" style="--brand-color: #FF66AA;">
+                        <div class="btn-trigger"><img src="assets/images/icons/osu.svg" alt="osu!" draggable="false"><span>osu!</span></div>
+                        <div class="hidden-info">[GB]LumiereLP</div>
+                    </div>
+
+                    <div class="contact-row" data-type="link" data-url="https://space.bilibili.com/24887841" data-value="卢米埃尔Lumiere" style="--brand-color: #00A1D6;">
+                        <div class="btn-trigger"><img src="assets/images/icons/bilibili.svg" alt="bilibili" draggable="false"><span>bilibili</span></div>
+                        <div class="hidden-info">卢米埃尔Lumiere</div>
+                    </div>
+                </div>
             </main>
+
+            
+
+            <div id="toast">已复制到剪贴板</div>
+
             <div class="panel-actions">
                 <ul class="dialogue">
                     <li><a href="#" class="dialog-option dialog-back" style="--glow: #7FDBFF;">“ 我还有其他问题 —— ”</a></li>
@@ -107,5 +143,11 @@
     </div>
 
     <script src="assets/js/script.js"></script>
+    <div id="qq-card" class="floating-card" style="display: none;">
+        <div class="card-header">
+                        <button class="card-close-btn">&times;</button>
+        </div>
+        <img src="assets/images/qq-qrcode.png" alt="QQ QR Code" draggable="false">
+    </div>
 </body>
 </html>

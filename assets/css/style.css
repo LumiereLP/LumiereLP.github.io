@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -116,7 +115,7 @@ header {
     overflow: hidden; /* 防止粒子边缘溢出 */
 }
 
-/* 【新增】Canvas 画布样式 */
+/* Canvas 画布样式 */
 #particleCanvas {
     position: absolute;
     top: 0;
@@ -127,7 +126,7 @@ header {
     pointer-events: none; /* 让鼠标事件穿透画布，由父级 header 统一接收 */
 }
 
-/* 【新增】确保文字内容在粒子上方 */
+/* 确保文字内容在粒子上方 */
 header h1 {
     position: relative;
     z-index: 2;        /* 高于 Canvas 的 z-index */
@@ -362,6 +361,7 @@ nav.fade-out {
 .panel .panel-inner {
     color: #f5f7ff;
     font: 18pt "Bodoni Moda", "Noto Serif SC", serif;
+    overflow-y: visible;
 }
 
 main {
@@ -402,9 +402,186 @@ blockquote {
     height: auto;
 }
 
+/* --- 联系面板容器布局 【已修改为网格响应式】 --- */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 默认电脑端两列平分 */
+    gap: 15px;
+    margin-top: 30px;
+    max-width: 940px;                      /* 扩展最大宽度以适应双列布局 */
+    width: 100%;
+}
+
+/* 长条卡牌一行 */
+.contact-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    will-change: width;
+}
+
+.contact-row:hover {
+    border-color: var(--brand-color);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* 左侧可缩短按钮 */
+.btn-trigger {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 15px;
+    box-sizing: border-box;
+    z-index: 2;
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    white-space: nowrap;
+}
+
+/* 按钮内部的 Logo */
+.btn-trigger img {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* 按钮内部的文字 */
+.btn-trigger span {
+    font-family: 'Figtree', 'Noto Sans SC', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    transition: opacity 0.2s;
+    user-select: none;
+}
+
+/* 右侧露出的背景信息 */
+.hidden-info {
+    position: absolute;
+    left: 65px;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s 0.1s, transform 0.3s 0.1s;
+    user-select: text;
+}
+
+/* --- 核心动画：悬停状态 --- */
+.contact-row:hover .btn-trigger {
+    width: 50px;
+    background: var(--brand-color);
+}
+
+.contact-row:hover .btn-trigger span {
+    opacity: 0;
+}
+
+.contact-row:hover .hidden-info {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- QQ悬浮二维码卡牌 --- */
+.floating-card {
+    position: fixed;
+    width: 280px;
+    background: #121214;
+    border: 2px solid #448AFF;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(68, 138, 255, 0.3);
+    z-index: 9999;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+    will-change: transform, opacity;
+    box-sizing: border-box;
+}
+
+.floating-card:active {
+    position: fixed;
+    z-index: 9999;
+    cursor: grabbing;
+}
+
+/* 卡牌头部 */
+.card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 6px;
+}
+
+.floating-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    pointer-events: none; 
+    box-sizing: border-box;
+}
+.card-close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 4px;
+}
+
+/* --- Toast 复制成功提示 --- */
+#toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+    padding: 8px 20px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 10000;
+}
+#toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* 【新增】平板及手机端自动变为一列排布 */
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
