@@ -3,7 +3,7 @@ layout: post
 title: "新版博客全功能测试文章"
 date: 2026-06-03 19:00:00 +0800
 categories: 随笔
-math: true                    # 💡 极其重要：开启此项才会自动加载上方的 LaTeX 脚本
+math: true
 ---
 
 ### 一、 样式框测试（测试多主题适配）
