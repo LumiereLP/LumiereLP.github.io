@@ -32,8 +32,6 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '3.1' # 确保 Ruby 版本较新以支持 Rouge 高亮
       - name: Install dependencies
         run: gem install jekyll bundler
       - name: Build with Jekyll
