@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客 - 个人网站</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./css/main.css">
+    
+    <link rel="stylesheet" href="./css/blog.css">
+</head>
+<body>
+
+    <header class="blog-header">
+        <div class="header-container">
+            <a href="../index.html" class="back-home">← 返回主页</a>
+            
+            <div class="reader-controls">
+                <button id="font-toggle" class="control-btn" title="切换衬线/非衬线">A</button>
+                
+                <div class="theme-selector">
+                    <button class="theme-btn btn-dark active" data-theme="dark" title="深色"></button>
+                    <button class="theme-btn btn-white" data-theme="white" title="纯白"></button>
+                    <button class="theme-btn btn-sepia" data-theme="sepia" title="杏黄"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="blog-main-container">
+        <section class="blog-hero">
+            <h1 class="blog-title">故纸堆</h1>
+            <p class="blog-subtitle">写我所想。</p>
+        </section>
+
+        <section class="post-list">
+            ---
+
+            ---
+
+            <section class="post-list">
+                {% if site.posts.size > 0 %}
+                    {% for post in site.posts %}
+                        <article class="post-card">
+                            <div class="post-meta">
+                                {{ post.date | date: "%Y年%m月%d日" }} 
+                                {% if post.categories.size > 0 %}
+                                    · {{ post.categories | join: ", " }}
+                                {% endif %}
+                            </div>
+                            <h2>
+                                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                            </h2>
+                            <p class="post-excerpt">
+                                {% if post.excerpt %}
+                                    {{ post.excerpt | strip_html | truncatewords: 30 }}
+                                {% else %}
+                                    {{ post.content | strip_html | truncate: 150 }}
+                                {% endif %}
+                            </p>
+                        </article>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-posts" style="text-align: center; color: var(--text-muted); padding: 40px 0;">
+                        <p>☕️ 暂无出版文章，新内容正在酝酿中...</p>
+                    </div>
+                {% endif %}
+            </section>
+        </section>
+    </main>
+
+    <footer class="blog-footer">
+        <p>© 2026 Powerby Jekyll & GitHub Pages</p>
+    </footer>
+
+    <script src="./js/blog-theme.js" defer></script>
+</body>
+</html>

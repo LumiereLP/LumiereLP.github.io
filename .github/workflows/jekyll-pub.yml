@@ -30,8 +30,16 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '3.1' # 确保 Ruby 版本较新以支持 Rouge 高亮
+      - name: Install dependencies
+        run: gem install jekyll bundler
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
+        env:
+          JEKYLL_ENV: production
         with:
           source: ./
           destination: ./_site
