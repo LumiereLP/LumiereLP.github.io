@@ -36,7 +36,7 @@ body.serif-mode {
 
 
 body.theme-white {
-    --bg-main: #ededed;
+    --bg-main: #f0f0f0;
     --text-main: #121212;
     --text-muted: #666666;
     --accent: #0066cc;
@@ -316,13 +316,27 @@ figure.highlight, pre {
     transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
-p code, li code {
-    background-color: var(--card-bg);
-    color: var(--accent);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 0.9em;
+:not(pre) > code {
+    background-color: var(--card-bg) !important;
+    color: var(--accent) !important;
+    padding: 3px 6px !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 4px !important;
+    font-family: "Consolas", "Courier New", monospace !important;
+    font-size: 0.9em !important;
+    word-break: break-word !important;
+    display: inline-block !important; /* 确保 padding 撑开且不会发生奇怪的断行 */
+    vertical-align: middle;
+    margin: 0 2px;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+/* 针对不同主题下的行内代码文本颜色微调，防止看不清 */
+body.theme-white :not(pre) > code {
+    color: #d73a49 !important; /* 纯白模式下用高亮红 */
+}
+body.theme-sepia :not(pre) > code {
+    color: #b1392b !important; /* 羊皮纸模式下用深砖红 */
 }
 
 .highlight .c, .highlight .cm, .highlight .c1 { color: #8b949e; font-style: italic; } /* 注释 */
