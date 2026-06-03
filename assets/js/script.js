@@ -162,8 +162,8 @@ window.addEventListener('DOMContentLoaded', () => {
     canvas.height = header.clientHeight;
 
     let particlesArray = [];
-    let mouse = { x: undefined, y: undefined, radius: 150 };
-    let isElementVisible = true; // 视口可见性状态
+    let mouse = { x: undefined, y: undefined, radius: 300 };
+    let isElementVisible = true;
     let animationFrameId = null;
 
     header.addEventListener('mousemove', (e) => {
@@ -186,9 +186,9 @@ window.addEventListener('DOMContentLoaded', () => {
             this.size = 1.5;
             this.vx = 0;
             this.vy = 0;
-            this.springStrength = 0.1;
-            this.repulsionStrength = 10;
-            this.friction = 0.55;
+            this.springStrength = 0.07;
+            this.repulsionStrength = 6;
+            this.friction = 0.5;
         }
         draw() {
             ctx.fillStyle = 'rgba(135, 183, 255, 0.51)';
@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 pressTimer = setTimeout(() => {
                     showQQCard();
                     document.removeEventListener('mousemove', trackMouse);
-                }, 2000);
+                }, 1000);
             };
 
             const cancelPress = () => {

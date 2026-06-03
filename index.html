@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div id="particles-js"></div>
     <!-- Header -->
     <header id="heroHeader">
         <canvas id="particleCanvas"></canvas>
@@ -36,7 +37,7 @@
                 <div class="or">或者，</div>
                 <div class="actions">
                     <a href="#song" class="mini-action">听首歌吧</a>
-                    <a href="#book" class="mini-action">看本书吧</a>
+                    <a href="/blog/index.html" class="mini-action">看本书吧</a>
                 </div>
             </div>
         </nav>
@@ -90,7 +91,7 @@
 
         <section id="contact-panel" class="panel" aria-hidden="true">
             <main class="panel-inner">
-                <h2>联系</h2>
+                <h2>联系方式</h2>
                 
                 <div class="contact-container">
                     <div class="contact-row" data-type="copy" data-value="erirochester@gmail.com" style="--brand-color: #EA4335;">
@@ -141,8 +142,15 @@
         <footer>
         </footer>
     </div>
-
-    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="assets/js/script.js">
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            particlesJS.load('particles-js', 'assets/js/particlesjs-config.json', function() {
+            });
+        });
+    </script>
     <div id="qq-card" class="floating-card" style="display: none;">
         <div class="card-header">
                         <button class="card-close-btn">&times;</button>
