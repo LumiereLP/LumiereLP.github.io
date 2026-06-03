@@ -48,11 +48,11 @@ body.theme-white {
     --border-color: #2a2a2a;
     --box-note-bg: rgba(56, 139, 253, 0.1);
     --box-note-border: #388bfd;
-    --box-note-text: #79c0ff;
+    --box-note-text: #39a2fd;
     
-    --box-warn-bg: rgba(210, 153, 34, 0.1);
-    --box-warn-border: #d29922;
-    --box-warn-text: #e3b341;
+    --box-warn-bg: rgba(210, 154, 34, 0.288);
+    --box-warn-border: #fdbc30;
+    --box-warn-text: #ffab2e;
 }
 
 
