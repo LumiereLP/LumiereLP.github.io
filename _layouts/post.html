@@ -28,9 +28,9 @@
                 <button id="font-toggle" class="control-btn" title="切换衬线/非衬线">A</button>
                 
                 <div class="theme-selector">
-                    <button class="theme-btn btn-dark active" data-theme="dark" title="深色模式"></button>
-                    <button class="theme-btn btn-white" data-theme="white" title="纯白模式"></button>
-                    <button class="theme-btn btn-sepia" data-theme="sepia" title="羊皮纸模式"></button>
+                    <button class="theme-btn btn-dark active" data-theme="dark" title="深色"></button>
+                    <button class="theme-btn btn-white" data-theme="white" title="纯白"></button>
+                    <button class="theme-btn btn-sepia" data-theme="sepia" title="淡黄"></button>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                         · {{ page.categories | join: ", " }}
                     {% endif %}
                 </div>
-                <h1 class="post-title" style="font-size: 36px; margin: 10px 0 30px 0;">{{ page.title }}</h1>
+                <h1 class="post-title" style="font-size: 36px; margin: 10px 0 30px 0; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">{{ page.title }}</h1>
             </header>
 
             <div class="entry-content">
