@@ -34,3 +34,4 @@ const theme = localStorage.getItem('blog-theme-preference');
 if (theme === 'sepia') {
     document.body.classList.add('theme-sepia');
 }
+```
