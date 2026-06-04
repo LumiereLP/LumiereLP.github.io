@@ -34,7 +34,7 @@ body.theme-white {
     --text-muted: #666666;
     --accent: #0066cc;
     --border-color: #eaeaea;
-    --card-bg: #f9f9f9;
+    --card-bg: #c2c2c2;
     --card-hover: #f0f0f0;
     --accent: #4dadff;
     --border-color: #2a2a2a;
@@ -305,6 +305,18 @@ figure.highlight, pre {
     font-size: 20px;
     line-height: 1.5;
     margin: 20px 0;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+:not(pre) > code {
+    background-color: var(--card-bg);
+    color: var(--accent);
+    padding: 0px 6px;
+    border-radius: 2px ;
+    font-family: "Consolas", "Courier New", monospace;
+    word-break: break-word;
+    display: inline-block;
+    margin: 0 2px;
     transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
