@@ -41,6 +41,15 @@ layout: null
             <p class="blog-subtitle">写我所想。</p>
         </section>
 
+        <section class="category-filter-container">
+            <button class="filter-btn active" data-target="all">全部</button>
+            {% for category in site.categories %}
+                <button class="filter-btn" data-target="{{ category[0] | slugify }}">
+                    {{ category[0] }} <span>({{ category[1].size }})</span>
+                </button>
+            {% endfor %}
+        </section>
+
         <section class="post-list">
             <section class="post-list">
                 {% if site.posts.size > 0 %}

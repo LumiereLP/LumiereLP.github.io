@@ -124,6 +124,52 @@ a {
     clear: both;
 }
 
+.category-filter-container {
+    margin: -20px 0 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    background-color: var(--card-bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 20px; /* 圆角矩形关键 */
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: all 0.25s ease;
+}
+
+.filter-btn span {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-left: 2px;
+}
+
+.filter-btn:hover {
+    color: var(--text-main);
+    border-color: var(--text-main);
+    transform: translateY(-1px);
+}
+
+.filter-btn.active {
+    background-color: var(--accent);
+    color: #ffffff !important; /* 保证高亮时文字可读 */
+    border-color: var(--accent);
+    box-shadow: 0 2px 8px rgba(77, 173, 255, 0.3);
+}
+
+body.theme-white .filter-btn.active { box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2); }
+body.theme-sepia .filter-btn.active { box-shadow: 0 2px 8px rgba(77, 173, 255, 0.2); }
+
+.post-card.is-hidden {
+    display: none !important;
+    opacity: 0 ease 0;
+}
+
 .back-home {
     float: left;
     font-size: 18px;

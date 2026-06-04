@@ -3,11 +3,7 @@
 }
 
 :root {
-
     --font-body: "Figtree", "Noto Sans CJK SC", sans-serif;
-    --font-body: "Figtree", "Noto Sans CJK SC", sans-serif;
-    
-
     --bg-main: #121212;
     --bg-header: rgba(30, 30, 30, 0.75);
     --text-main: #ffffff;
@@ -16,13 +12,10 @@
     --border-color: #2a2a2a;
     --card-bg: #1e1e1e;
     --card-hover: #252525;
-
-
-    --box-note-bg: rgba(56, 139, 253, 0.1);
+    --box-note-bg: rgb(56 139 253 / 18%);
     --box-note-border: #388bfd;
     --box-note-text: #79c0ff;
-    
-    --box-warn-bg: rgba(210, 153, 34, 0.1);
+    --box-warn-bg: rgb(255 191 56 / 20%);
     --box-warn-border: #d29922;
     --box-warn-text: #e3b341;
 }
@@ -36,42 +29,38 @@ body.serif-mode {
 
 
 body.theme-white {
-    --bg-main: #f0f0f0;
+    --bg-main: #ebebeb;
     --text-main: #121212;
     --text-muted: #666666;
     --accent: #0066cc;
     --border-color: #eaeaea;
-    --card-bg: #f9f9f9;
+    --card-bg: #c2c2c2;
     --card-hover: #f0f0f0;
-
     --accent: #4dadff;
     --border-color: #2a2a2a;
-    --box-note-bg: rgba(56, 139, 253, 0.1);
+    --box-note-bg: #63a5ff42;
     --box-note-border: #388bfd;
     --box-note-text: #39a2fd;
-    
-    --box-warn-bg: rgba(210, 154, 34, 0.288);
+    --box-warn-bg: #ffcb5c40;
     --box-warn-border: #fdbc30;
     --box-warn-text: #ffab2e;
 }
 
 
 body.theme-sepia {
-    --bg-main: #f5eede;
+    --bg-main: #fff7e4;
     --text-main: #362a1b;
     --text-muted: #70604c;
     --accent: #4dadff;
     --border-color: #2a2a2a;
     --card-bg: #f5eede;
     --card-hover: #f0e5c9;
-
-    --box-note-bg: rgba(56, 139, 253, 0.1);
+    --box-note-bg: #68a8ff38;
     --box-note-border: #388bfd;
-    --box-note-text: #79c0ff;
-    
-    --box-warn-bg: rgba(210, 153, 34, 0.1);
+    --box-note-text: #1c94ff;
+    --box-warn-bg: #ffd53f30;
     --box-warn-border: #d29922;
-    --box-warn-text: #e3b341;
+    --box-warn-text: #ffb300;
 }
 
 
@@ -79,7 +68,7 @@ body {
     background-color: var(--bg-main);
     color: var(--text-main);
     font-family: var(--font-body);
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.7;
     margin: 0;
     padding: 0;
@@ -91,10 +80,19 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     color: var(--text-main);
     font-weight: 600;
-    font-size: 2.5em;
     line-height: 1.3;
-    margin-top: 0;
     transition: color 0.4s ease, font-family 0.3s ease;
+}
+
+h1 { 
+    font-size: 1.8em;
+    margin-top: 1.8em; 
+}
+h2 { font-size: 1.5em; 
+    margin-top: 1.3em; 
+}
+h3 { font-size: 1.2em; 
+    margin-top: 0.7em; 
 }
 
 a {
@@ -128,7 +126,7 @@ a {
 
 .back-home {
     float: left;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 32px;
 }
@@ -277,7 +275,7 @@ body.theme-sepia .theme-btn.active::after { color: #433422; }
     margin: 20px 0;
     border-left: 4px solid;
     border-radius: 4px;
-    font-size: 24px;
+    font-size: 22px;
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
@@ -317,18 +315,28 @@ figure.highlight, pre {
 }
 
 :not(pre) > code {
-    background-color: var(--card-bg) !important;
-    color: var(--accent) !important;
-    padding: 3px 6px !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 4px !important;
-    font-family: "Consolas", "Courier New", monospace !important;
-    font-size: 0.9em !important;
-    word-break: break-word !important;
-    display: inline-block !important; /* 确保 padding 撑开且不会发生奇怪的断行 */
-    vertical-align: middle;
+    background-color: var(--card-bg);
+    color: var(--accent);
+    padding: 0px 6px;
+    border-radius: 2px ;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 80%;
+    word-break: break-word;
+    display: inline-block;
     margin: 0 2px;
     transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid var(--border-color);
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 /* 针对不同主题下的行内代码文本颜色微调，防止看不清 */
