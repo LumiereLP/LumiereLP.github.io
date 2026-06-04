@@ -320,6 +320,16 @@ figure.highlight, pre {
     transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid var(--border-color);
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+}
+
 /* 针对不同主题下的行内代码文本颜色微调，防止看不清 */
 body.theme-white :not(pre) > code {
     color: #d73a49 !important; /* 纯白模式下用高亮红 */
