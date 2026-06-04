@@ -1,25 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const filterButtons = document.querySelectorAll('.filter-btn');
+const filterButtons = document.querySelectorAll('.filter-btn');
     const postCards = document.querySelectorAll('.post-card');
 
     if (filterButtons.length > 0 && postCards.length > 0) {
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // 1. 切换按钮激活状态
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
                 const targetCategory = button.getAttribute('data-target');
 
-                // 2. 过滤文章卡片
                 postCards.forEach(card => {
                     if (targetCategory === 'all') {
-                        // 显示全部
                         card.classList.remove('is-hidden');
                     } else {
-                        // 获取当前卡片包含的所有分类（以空格分隔的数组）
-                        const cardCategories = card.getAttribute('data-category').split(' ');
+                        const categoryAttr = card.getAttribute('data-category');
+                        
+                        if (!categoryAttr) {
+                            card.classList.add('is-hidden');
+                            return; 
+                        }
+
+                        const cardCategories = categoryAttr.split(' ');
                         
                         if (cardCategories.includes(targetCategory)) {
                             card.classList.remove('is-hidden');

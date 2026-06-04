@@ -41,7 +41,7 @@ layout: null
             <p class="blog-subtitle">写我所想。</p>
         </section>
 
-        <section class="category-filter-container">
+<section class="category-filter-container">
             <button class="filter-btn active" data-target="all">全部</button>
             {% for category in site.categories %}
                 <button class="filter-btn" data-target="{{ category[0] | slugify }}">
@@ -51,34 +51,34 @@ layout: null
         </section>
 
         <section class="post-list">
-            <section class="post-list">
-                {% if site.posts.size > 0 %}
-                    {% for post in site.posts %}
-                        <article class="post-card">
-                            <div class="post-meta">
-                                {{ post.date | date: "%Y年%m月%d日" }} 
-                                {% if post.categories.size > 0 %}
-                                    · {{ post.categories | join: ", " }}
-                                {% endif %}
-                            </div>
-                            <h2>
-                                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                            </h2>
-                            <p class="post-excerpt">
-                                {% if post.excerpt %}
-                                    {{ post.excerpt | strip_html | truncatewords: 30 }}
-                                {% else %}
-                                    {{ post.content | strip_html | truncate: 150 }}
-                                {% endif %}
-                            </p>
-                        </article>
-                    {% endfor %}
-                {% else %}
-                    <div class="no-posts" style="text-align: center; color: var(--text-muted); padding: 40px 0;">
-                        <p>这里似乎还没有内容。</p>
-                    </div>
-                {% endif %}
-            </section>
+            {% if site.posts.size > 0 %}
+                {% for post in site.posts %}
+                    {% capture post_cats %}{% for cat in post.categories %}{{ cat | slugify }} {% endfor %}{% endcapture %}
+                    
+                    <article class="post-card" data-category="{{ post_cats | strip }}">
+                        <div class="post-meta">
+                            {{ post.date | date: "%Y年%m月%d日" }} 
+                            {% if post.categories.size > 0 %}
+                                · {{ post.categories | join: ", " }}
+                            {% endif %}
+                        </div>
+                        <h2>
+                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h2>
+                        <p class="post-excerpt">
+                            {% if post.excerpt %}
+                                {{ post.excerpt | strip_html | truncatewords: 30 }}
+                            {% else %}
+                                {{ post.content | strip_html | truncate: 150 }}
+                            {% endif %}
+                        </p>
+                    </article>
+                {% endfor %}
+            {% else %}
+                <div class="no-posts" style="text-align: center; color: var(--text-muted); padding: 40px 0;">
+                    <p>这里似乎还没有内容。</p>
+                </div>
+            {% endif %}
         </section>
     </main>
 
