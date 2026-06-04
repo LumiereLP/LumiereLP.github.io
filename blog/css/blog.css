@@ -328,6 +328,8 @@ table {
 
 th, td {
   border: 1px solid var(--border-color);
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 /* 针对不同主题下的行内代码文本颜色微调，防止看不清 */
