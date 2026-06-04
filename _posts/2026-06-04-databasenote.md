@@ -212,7 +212,7 @@ WHERE
 
 **2. 连表查询** `JOIN ... ON ...`
 
-   1. 内连接 `INNER JOIN`：只返回两张表中完全匹配的行。
+- 内连接 `INNER JOIN`：只返回两张表中完全匹配的行。
 
    ```SQL
    SELECT e.emp_name, d.dept_name
@@ -220,7 +220,7 @@ WHERE
    INNER JOIN departments AS d ON e.dept_id = d.dept_id;
    ```
 
-   2. 外连接 `LEFT JOIN` 或 `RIGHT JOIN`：同对应的外连接。
+- 外连接 `LEFT JOIN` 或 `RIGHT JOIN`：同对应的外连接。
 
    ```SQL
    SELECT u.user_name, o.order_id
@@ -228,7 +228,7 @@ WHERE
    LEFT JOIN orders AS o ON u.user_id = o.user_id;
    ```
 
-   3. 笛卡尔积 `CROSS JOIN`
+- 笛卡尔积 `CROSS JOIN`
 
 **3. 组合查询** `UNION`：连接两个 `SELECT` 语句
 
@@ -238,7 +238,7 @@ WHERE
    4. `EXCEPT`：差集。
 
 <div class="custom-box-warn">
-  <strong>注意：</strong> 被组合的多个 `SELECT` 语句，其列的数量、列的顺序以及对应位置的数据类型必须完全一致，否则会报错。
+  <strong>注意：</strong> 被组合的多个 \`SELECT`\ 语句，其列的数量、列的顺序以及对应位置的数据类型必须完全一致，否则会报错。
 </div>
 
 #### 4. 子查询
