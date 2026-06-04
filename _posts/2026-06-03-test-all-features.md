@@ -2,7 +2,7 @@
 layout: post
 title: "新版博客全功能测试文章"
 date: 2026-06-03 19:00:00 +0800
-categories: 随笔
+categories: 系统测试
 math: true
 ---
 
