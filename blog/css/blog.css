@@ -314,6 +314,7 @@ figure.highlight, pre {
     padding: 0px 6px;
     border-radius: 2px ;
     font-family: "Consolas", "Courier New", monospace;
+    font-size: 80%;
     word-break: break-word;
     display: inline-block;
     margin: 0 2px;
