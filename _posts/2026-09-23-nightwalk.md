@@ -3,6 +3,7 @@ layout: post
 title: "水溶液中的粒子浓度大小比较"
 date: 2026-09-23 08:00:00 +0800
 categories: 学术笔记
+math: true
 ---
 
 # 水溶液中的粒子浓度大小比较
