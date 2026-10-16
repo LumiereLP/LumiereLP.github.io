@@ -54,7 +54,7 @@ def convert_excel_to_json():
                 bpm = '--'
                 
             source = str(row.get('source', '')).strip()
-            if source == 'NaN':
+            if source.lower() == 'nan':
                 source = ""
                 
             title = str(row['title']).strip()
