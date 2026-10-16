@@ -1,0 +1,15 @@
+<header class="blog-header">
+    <div class="header-container">
+        <a href="{{ include.back_url | relative_url }}" class="back-home">{{ include.back_text }}</a>
+
+        <div class="reader-controls">
+            <button id="font-toggle" class="control-btn" title="切换衬线/非衬线">A</button>
+
+            <div class="theme-selector">
+                <button class="theme-btn btn-dark active" data-theme="dark" title="深色"></button>
+                <button class="theme-btn btn-white" data-theme="white" title="纯白"></button>
+                <button class="theme-btn btn-sepia" data-theme="sepia" title="杏黄"></button>
+            </div>
+        </div>
+    </div>
+</header>
