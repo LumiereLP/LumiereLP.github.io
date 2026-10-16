@@ -137,9 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     return response.json();
                 })
                 .then(songs => {
-                    if (songs && songs.length > 0) {
-                        var randomIndex = Math.floor(Math.random() * songs.length);
-                        var randomSong = songs[randomIndex];
+                    var randomSong = SongPicker.pick(songs);
+                    if (randomSong) {
                         window.location.href = './song/index.html?id=' + randomSong.id;
                     }
                 })

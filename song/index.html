@@ -98,6 +98,28 @@
         .song-specs span span {
             color: #aaaaaa;
         }
+        .shuffle-btn {
+            display: inline-block;
+            margin-top: 1.2rem;
+            padding: 0.45rem 1.1rem;
+            background: transparent;
+            color: #aaaaaa;
+            border: 1px solid #333333;
+            border-radius: 999px;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            cursor: pointer;
+            transition: color 0.3s, border-color 0.3s;
+        }
+        .shuffle-btn:hover {
+            color: #ffffff;
+            border-color: #888888;
+        }
+        .shuffle-btn:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+
         .error-message {
             text-align: center;
             margin-top: 20vh;
@@ -133,53 +155,77 @@
                     <span class="spec-item"><br>来源: <span id="source"></span></span>
                 </span>
             </div>
+            <button type="button" class="shuffle-btn" id="shuffle-btn" disabled>换一首 ↻</button>
             <div class="video-wrapper" id="video-container" style="margin-top: 2rem; margin-bottom: 2rem;">
                 </div>
         </div>
     </div>
 
+    <script src="../assets/js/song-picker.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const shuffleBtn = document.getElementById('shuffle-btn');
+            let songs = [];
+            let currentId = new URLSearchParams(window.location.search).get('id');
 
-            const urlParams = new URLSearchParams(window.location.search);
-            let songId = urlParams.get('id');
-            if (!songId) {
+            if (!currentId) {
                 showError('未找到对应的歌曲信号');
                 return;
             }
+
             fetch('../songs.json')
                 .then(response => {
                     if (!response.ok) throw new Error();
                     return response.json();
                 })
-                .then(songs => {
-                    const song = songs.find(s => s.id == songId);
-
-                    if (song) {
-                        document.getElementById('title').textContent = song.title;
-                        document.getElementById('artist').textContent = song.artist;
-                        document.getElementById('length').textContent = song.length || '--:--';
-                        if (song.bpm && song.bpm !== '0' && song.bpm !== 0) {
-                            document.getElementById('bpm').textContent = song.bpm;
-                        } else {
-                            document.getElementById('bpm').textContent = '--';
-                        }
-                        const videoContainer = document.getElementById('video-container');
-                        videoContainer.innerHTML = song.embed;
-                        const sourceContainer = document.getElementById('source-container');
-                        if (song.source && song.source.strip !== "") {
-                            document.getElementById('source').textContent = song.source;
-                            sourceContainer.style.display = 'inline'; // 有数据则显示出来
-                        } else {
-                            sourceContainer.style.display = 'none';  // 无数据则隐形
-                        }
-                    } else {
-                        showError('该神秘歌曲已从数据库中抹去 (ID: ' + songId + ')');
-                    }
+                .then(data => {
+                    songs = data;
+                    render(currentId);
+                    shuffleBtn.disabled = songs.length < 2;
                 })
                 .catch(() => {
                     showError('无法加载核心数据库，请检查网络连接');
                 });
+
+            shuffleBtn.addEventListener('click', function() {
+                const next = SongPicker.pick(songs, currentId);
+                if (!next) return;
+                history.pushState(null, '', '?id=' + next.id);
+                render(next.id);
+            });
+
+            // 浏览器前进/后退时同步显示对应歌曲
+            window.addEventListener('popstate', function() {
+                const id = new URLSearchParams(window.location.search).get('id');
+                if (id && songs.length) render(id);
+            });
+
+            function render(songId) {
+                const song = songs.find(s => s.id == songId);
+                if (!song) {
+                    showError('该神秘歌曲已从数据库中抹去 (ID: ' + songId + ')');
+                    return;
+                }
+                currentId = song.id;
+                SongPicker.markPlayed(song.id);
+
+                document.getElementById('title').textContent = song.title;
+                document.getElementById('artist').textContent = song.artist;
+                document.getElementById('length').textContent = song.length || '--:--';
+                if (song.bpm && song.bpm !== '0' && song.bpm !== 0) {
+                    document.getElementById('bpm').textContent = song.bpm;
+                } else {
+                    document.getElementById('bpm').textContent = '--';
+                }
+                document.getElementById('video-container').innerHTML = song.embed;
+                const sourceContainer = document.getElementById('source-container');
+                if (song.source && song.source.trim() !== '') {
+                    document.getElementById('source').textContent = song.source;
+                    sourceContainer.style.display = 'inline'; // 有数据则显示出来
+                } else {
+                    sourceContainer.style.display = 'none';  // 无数据则隐形
+                }
+            }
 
             function showError(msg) {
                 document.getElementById('player-content').innerHTML = `
