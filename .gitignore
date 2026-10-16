@@ -4,3 +4,11 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# jekyll
+_site/
+.jekyll-cache/
+.sass-cache/
+Gemfile.lock
+vendor/
+.bundle/

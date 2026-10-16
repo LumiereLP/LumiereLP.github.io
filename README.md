@@ -58,3 +58,42 @@ Webpage
 3. [ ] 平面设计和视频在同一页的不同 `<section>` 里
 4. [ ] 使用图池表的脚本解析谱面
 5. [ ] 约稿展示区（图片上方覆盖信息）
+
+## 写博客
+
+### 方式一：浏览器里写（推荐）
+
+打开 [Pages CMS](https://app.pagescms.org)，用 GitHub 登录并选择本仓库，进入「博客文章」即可新建/编辑，保存后自动提交并部署。配置见 `.pages.yml`。
+
+### 方式二：直接写 Markdown
+
+复制 `_drafts/_template.md` 到 `_posts/YYYY-MM-DD-英文短名.md`，front matter 最少只需：
+
+```yaml
+---
+title: "文章标题"
+categories: 学术笔记
+---
+```
+
+`layout: post` 和 `math: true` 已在 `_config.yml` 里默认设置；正文不用再写 `# 标题`。
+
+### 公式写法
+
+统一用 `$$` 包裹，里面**不需要双重转义**：
+
+- 行内：`浓度 $$[\mathrm{H^+}]$$ 增大`
+- 独立成行：前后各空一行
+
+  ```markdown
+  $$K_w=[\mathrm{H^+}][\mathrm{OH^-}]$$
+  ```
+
+不要再用 `\\(...\\)`、`\\[...\\]` 或单个 `$`。
+
+### 本地预览
+
+```bash
+bundle install
+bundle exec jekyll serve --drafts   # 打开 http://localhost:4000/blog/
+```

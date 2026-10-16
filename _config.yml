@@ -2,6 +2,25 @@ markdown: kramdown
 
 highlighter: rouge
 
+timezone: Asia/Shanghai
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+# 文章默认值：新文章的 front matter 只需写 title（日期取自文件名）
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      math: true
+
+exclude:
+  - tools/
+  - README.md
+  - wrangler.jsonc
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

@@ -501,3 +501,9 @@ body.theme-sepia .highlight .nb, body.theme-sepia .highlight .nf { color: #5c388
 body.theme-sepia .highlight .nv, body.theme-sepia .highlight .no { color: #8c582b; }
 body.theme-sepia .highlight .nt { color: #3b6b4c; }
 body.theme-sepia .highlight .m, body.theme-sepia .highlight .mi { color: #1b527d; }
+.post-entry-header .post-title {
+    font-size: 36px;
+    margin: 10px 0 30px 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
