@@ -114,7 +114,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=281227163&bvid=BV1gc411r7Lv&cid=1340657653&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "191",
     "length": "4:25",
-    "source": "只要贝尔哲布布大小姐喜欢就好 OP"
+    "source": "《只要贝尔哲布布大小姐喜欢就好》 OP"
   },
   {
     "id": 14,
@@ -150,7 +150,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115983930885592&bvid=BV1mr6qBnEue&cid=35711485668&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "70",
     "length": "3:04",
-    "source": "机动战士高达 闪光的哈萨维 喀耳刻的魔女"
+    "source": "《机动战士高达 闪光的哈萨维 喀耳刻的魔女》"
   },
   {
     "id": 18,
@@ -420,7 +420,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=787028248&bvid=BV1g14y1q738&cid=1226641332&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "243",
     "length": "3:12",
-    "source": "莱莎的炼金工房～常暗女王与秘密藏身处～ OP"
+    "source": "《莱莎的炼金工房～常暗女王与秘密藏身处》～ OP"
   },
   {
     "id": 48,
@@ -447,7 +447,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=114007373578780&bvid=BV1eQAPevEP3&cid=28405336336&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "100",
     "length": "2:34",
-    "source": "明日方舟"
+    "source": "游戏《明日方舟》"
   },
   {
     "id": 51,
@@ -672,7 +672,7 @@
     "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115901269547529&bvid=BV1n3kPBSEXP&cid=35411266193&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
     "bpm": "95",
     "length": "3:05",
-    "source": "Limbus Company"
+    "source": "游戏《边狱巴士》"
   },
   {
     "id": 76,
@@ -943,5 +943,212 @@
     "bpm": "135",
     "length": "3:39",
     "source": ""
+  },
+  {
+    "id": 106,
+    "title": "Rendezvous",
+    "artist": "Mili",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=117381221322927&bvid=BV1yRH66VEHm&cid=42449833925&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "198(66)",
+    "length": "3:46",
+    "source": "游戏《边狱巴士》"
+  },
+  {
+    "id": 107,
+    "title": "ネリネの内緒事（石蒜花的秘密）",
+    "artist": "ヰ世界情緒",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=113001327821686&bvid=BV1MRWTeXEzu&cid=500001657586469&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "129",
+    "length": "3:53",
+    "source": ""
+  },
+  {
+    "id": 108,
+    "title": "Twin Bloom",
+    "artist": "Gardens",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=117304851498129&bvid=BV1kehh6uE5v&cid=42063956295&p=2\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "145-218",
+    "length": "7:04",
+    "source": "osu!mania 4k World Cup 2026 Grandfinals Tiebreaker"
+  },
+  {
+    "id": 109,
+    "title": "人類五分前仮説（人类五分前假说）",
+    "artist": "スズム",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1933490&bvid=BV1jx411A7Ra&cid=2986929&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "292",
+    "length": "4:03",
+    "source": ""
+  },
+  {
+    "id": 110,
+    "title": "It's going down now",
+    "artist": "Lotus Juice & 高橋あず美",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1300748192&bvid=BV1Hu4m1N7SL&cid=1440080129&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "168",
+    "length": "3:04",
+    "source": "《女神异闻录3 Reload》"
+  },
+  {
+    "id": 111,
+    "title": "Chasing Rain",
+    "artist": "DiGiTAL WiNG & ｙｔｒ",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115768830199555&bvid=BV1jLBuBmEu5&cid=34958609525&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "140",
+    "length": "6:13",
+    "source": "街机游戏《头文字DAC》"
+  },
+  {
+    "id": 112,
+    "title": "神的創造",
+    "artist": "妖精帝國",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=114682941675926&bvid=BV1JkMmzBEbD&cid=30500587409&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "298",
+    "length": "4:05",
+    "source": "游戏《fortissimo FA//Akkord:nächsten Phase》"
+  },
+  {
+    "id": 113,
+    "title": "CHROMATIC",
+    "artist": "DR. VEGAS LABORATORY",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=117232239646903&bvid=BV1QWb364Eb1&cid=41706783561&p=8\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "127",
+    "length": "3:21",
+    "source": "专辑《AD: House 14》"
+  },
+  {
+    "id": 114,
+    "title": "東京",
+    "artist": "Shunji Fujii feat. EVO+",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=117232239646903&bvid=BV1QWb364Eb1&cid=41853780794&p=28\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "128",
+    "length": "5:10",
+    "source": "专辑《AD: House 14》"
+  },
+  {
+    "id": 115,
+    "title": "ミッドナイト・ソーダ",
+    "artist": "Kenichi Chiba feat. yosumi",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=117232239646903&bvid=BV1QWb364Eb1&cid=41852929286&p=15\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "126",
+    "length": "3:30",
+    "source": "专辑《AD: House 14》"
+  },
+  {
+    "id": 116,
+    "title": "Riven Pilgrimage",
+    "artist": "rejection & Supire feat. Eili",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=117165902531752&bvid=BV11Rhw6wE5o&cid=41350464193&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "180",
+    "length": "2:42",
+    "source": "音乐游戏《Arcaea》"
+  },
+  {
+    "id": 117,
+    "title": "Crimson Horizon",
+    "artist": "Sakamiya feat. みそらみみ",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116952630626341&bvid=BV1NgKp64E9E&cid=41083207851&p=2\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "181",
+    "length": "4:27",
+    "source": "osu!mania 4k Chinese National Cup 2026"
+  },
+  {
+    "id": 118,
+    "title": "風と町",
+    "artist": "Mrs. GREEN APPLE",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116487901748923&bvid=BV1od9SBiENC&cid=37947508604&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "209",
+    "length": "3:37",
+    "source": "晨间剧《风，带有香气》主题曲"
+  },
+  {
+    "id": 119,
+    "title": "Ego Death",
+    "artist": "Polyphia feat. Steve Kai",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=986020309&bvid=BV1Ht4y1w7zh&cid=846132013&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "126-132(128)",
+    "length": "5:50",
+    "source": ""
+  },
+  {
+    "id": 120,
+    "title": "维谷奔流记",
+    "artist": "祝游会",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=830175269&bvid=BV1tu4y1X75h&cid=1244431718&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "130",
+    "length": "5:42",
+    "source": ""
+  },
+  {
+    "id": 121,
+    "title": "しづかの海（宁静之海）",
+    "artist": "・・・・・・・・・",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=114021785214764&bvid=BV19TAweoEE3&cid=25759391735&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "92",
+    "length": "6:44",
+    "source": ""
+  },
+  {
+    "id": 122,
+    "title": "酸橙色信笺",
+    "artist": "DAZBEE",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=116980698843376&bvid=BV1nB3u6tEHD&cid=40338851269&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "160",
+    "length": "3:49",
+    "source": "游戏《明日方舟》"
+  },
+  {
+    "id": 123,
+    "title": "青と夏",
+    "artist": "Mrs. GREEN APPLE",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1055459222&bvid=BV1nn4y197XU&cid=1579859799&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "185",
+    "length": "4:30",
+    "source": "电影《青夏-与你相恋的30天-》主题曲"
+  },
+  {
+    "id": 124,
+    "title": "8films",
+    "artist": "宇宙コンビニ",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=115429511009462&bvid=BV1jfspzBEVi&cid=33364578264&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "130",
+    "length": "2:30",
+    "source": ""
+  },
+  {
+    "id": 125,
+    "title": "Name of oath",
+    "artist": "void feat. コツキミヤ/Gt. えば",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=1855989858&bvid=BV15W421R7Yk&cid=1592598837&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "174",
+    "length": "4:36",
+    "source": "BOF2010"
+  },
+  {
+    "id": 126,
+    "title": "ダイヤモンドでも砕けない（Harder than Diamond）",
+    "artist": "庭師",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=114028697360463&bvid=BV1tWABeQE1S&cid=28467137113&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "250",
+    "length": "4:09",
+    "source": ""
+  },
+  {
+    "id": 127,
+    "title": "遭難",
+    "artist": "東京事変",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=24396879&bvid=BV1MW411A7QZ&cid=40954632&p=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "153",
+    "length": "3:30",
+    "source": ""
+  },
+  {
+    "id": 128,
+    "title": "利息（Risoku）",
+    "artist": "d.j.ァネイロ feat. 奕夕",
+    "embed": "<iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=117226736715868&bvid=BV1sCb46fEH8&cid=41650356244&p=2\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe>",
+    "bpm": "38-200",
+    "length": "2:27",
+    "source": "osu!mania 4K World Cup 2026 Semifinals RC7"
   }
 ]
