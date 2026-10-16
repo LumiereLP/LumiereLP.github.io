@@ -1,0 +1,85 @@
+---
+layout: null
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>讲义 - 故纸堆</title>
+
+    <link rel="icon" href="../assets/images/icons/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../blog/css/main.css">
+    <link rel="stylesheet" href="../blog/css/blog.css">
+    <link rel="stylesheet" href="./css/notes.css">
+</head>
+<body>
+
+    {% include blog-header.html back_url="/" back_text="← 返回主页" %}
+
+    <main class="blog-main-container">
+        <section class="blog-hero">
+            <h1 class="blog-title">讲义</h1>
+            <p class="blog-subtitle">边学边写，持续更新。</p>
+        </section>
+
+        {% for note in site.data.notes %}
+            {% assign pdf_url = note.site | append: note.pdf %}
+            <section class="note-card" id="{{ note.id }}"
+                     data-meta="{{ note.site | append: 'meta.json' }}">
+                <div class="note-info">
+                    <h2>{{ note.title }}</h2>
+                    <p class="post-excerpt">{{ note.description }}</p>
+                    <div class="post-meta note-updated" hidden>最后更新：<span></span></div>
+                </div>
+
+                <div class="note-actions">
+                    <a class="note-btn primary" href="{{ pdf_url }}" download>下载 PDF</a>
+                    <a class="note-btn" href="{{ pdf_url }}" target="_blank" rel="noopener">新标签页打开</a>
+                    <a class="note-btn" href="{{ note.repo }}" target="_blank" rel="noopener">源码</a>
+                </div>
+
+                <div class="note-preview">
+                    <iframe data-src="{{ pdf_url }}#view=FitH" title="{{ note.title }} 预览" loading="lazy" hidden></iframe>
+                    <p class="note-placeholder">讲义编译中，稍后再来看看吧。</p>
+                </div>
+            </section>
+        {% endfor %}
+    </main>
+
+    <footer class="blog-footer">
+        <p>© 2026 Powerby Jekyll & GitHub Pages</p>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top-btn" title="回到顶部">
+        <div class="back-to-top-icon"></div>
+    </button>
+
+    <script src="../blog/js/blog-theme.js" defer></script>
+    <script>
+    // 讲义仓库发布成功后才有 meta.json：取到则显示更新时间并加载预览，否则保留「编译中」占位
+    document.querySelectorAll('.note-card').forEach(async card => {
+        try {
+            const res = await fetch(card.dataset.meta, { cache: 'no-cache' });
+            if (!res.ok) return;
+            const meta = await res.json();
+
+            const updated = card.querySelector('.note-updated');
+            updated.querySelector('span').textContent =
+                new Date(meta.updated).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
+            updated.hidden = false;
+
+            const frame = card.querySelector('iframe');
+            frame.src = frame.dataset.src;
+            frame.hidden = false;
+            card.querySelector('.note-placeholder').hidden = true;
+        } catch (e) { /* 网络错误时保持占位 */ }
+    });
+    </script>
+</body>
+</html>
