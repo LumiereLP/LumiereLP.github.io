@@ -17,8 +17,11 @@ Webpage
 ├─ blog
 │  ├─ css
 │  └─ js
+├─ notes
+│  └─ css
 ├─ song
 ├─ tools
+├─ _data
 ├─ _layouts
 └─ _posts
 ```
@@ -58,6 +61,15 @@ Webpage
 3. [ ] 平面设计和视频在同一页的不同 `<section>` 里
 4. [ ] 使用图池表的脚本解析谱面
 5. [ ] 约稿展示区（图片上方覆盖信息）
+
+## 讲义
+
+讲义（LaTeX 原稿）放在独立仓库，如 [linear-algebra-notes](https://github.com/LumiereLP/linear-algebra-notes)。推送后由该仓库的 GitHub Actions 用 XeLaTeX 编译，并把 `linear-algebra.pdf` 和 `meta.json` 发布到 `https://lumierelp.github.io/linear-algebra-notes/`。
+
+主页的 `/notes/` 页面读取 `_data/notes.yml`，显示下载按钮、最后更新时间和 PDF 预览：
+
+- **更新讲义**：只需推送讲义仓库，主页无需改动。
+- **新增一门课**：照同样结构新建仓库，再在 `_data/notes.yml` 里加一项。
 
 ## 写博客
 
